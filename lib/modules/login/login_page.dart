@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/styles/button.dart';
 
 import '../../styles/colors.dart';
+import '../../styles/input.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
@@ -55,64 +57,26 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(30.0, 120.0, 30.0, 5.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      fillColor: darkGreen,
-                      hintText: 'Email ou nome de usuário',
-                      hintStyle: TextStyle(color: yellow),
-                      labelText: 'USUÁRIO',
-                      labelStyle: TextStyle(
-                        fontSize: 17.0,
-                        color: yellow,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: yellow),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        gapPadding: 10.0,
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        borderSide: BorderSide(width: 2.5, color: yellow),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: yellow),
-                        borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                      ),
-                      focusColor: Colors.red,
-                    ),
+                  child: PrimaryTextField(
+                    borderColor: yellow,
+                    fillColor: darkGreen,
+                    focusColor: lightGreen,
+                    hintText: 'Email ou nome de usuário',
+                    labelText: 'USUÁRIO',
+                    obscureText: true,
+                    controller: _userController,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
-                  child: TextField(
+                  child: PrimaryTextField(
+                    borderColor: yellow,
+                    fillColor: darkGreen,
+                    focusColor: lightGreen,
+                    hintText: 'Senha',
+                    labelText: 'SENHA',
                     obscureText: true,
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(
-                        Icons.visibility_outlined,
-                        color: yellow,
-                      ),
-                      hintText: 'Senha',
-                      hintStyle: TextStyle(color: Colors.yellow),
-                      labelText: 'SENHA',
-                      labelStyle: TextStyle(
-                        fontSize: 17.0,
-                        color: yellow,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: yellow),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        gapPadding: 10.0,
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        borderSide: BorderSide(width: 2.5, color: yellow),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: yellow),
-                        borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                      ),
-                      focusColor: red,
-                    ),
+                    controller: _passwordController,
                   ),
                 ),
                 Padding(
@@ -134,14 +98,29 @@ class _LoginPageState extends State<LoginPage> {
                         TextStyle(fontSize: 21.0, fontWeight: FontWeight.w900),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 70.0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Ainda não possui uma conta? '),
                       Text(
-                        'Registre-se agora.',
-                      )
+                        'Ainda não possui uma conta? ',
+                        style: TextStyle(color: white),
+                      ),
+                      GestureDetector(
+                          child: Text(
+                            'Registre-se agora.',
+                            style: TextStyle(
+                              color: yellow,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const RegisterPage()));
+                          })
                     ],
                   ),
                 ),
