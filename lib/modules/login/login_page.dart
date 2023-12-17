@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/styles/button.dart';
 
@@ -39,11 +40,11 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'FUTRENT',
                     style: TextStyle(
-                      letterSpacing: 1.5,
-                      fontSize: 70.0,
-                      fontWeight: FontWeight.bold,
-                      color: yellow,
-                    ),
+                        letterSpacing: 1.5,
+                        fontSize: 70.0,
+                        fontWeight: FontWeight.normal,
+                        color: yellow,
+                        fontFamily: 'Rubik'),
                   ),
                 ),
                 const Text(
@@ -80,12 +81,22 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(190.0, 5.0, 0.0, 30.0),
-                  child: Text(
-                    'Esqueceu sua senha?',
-                    style: TextStyle(
-                      color: yellow,
-                      fontWeight: FontWeight.bold,
+                  padding: const EdgeInsets.fromLTRB(190.0, 5.0, 13.0, 30.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const ForgotPasswordPage(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'ESQUECEU SUA SENHA?',
+                      style: TextStyle(
+                        color: yellow,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -108,19 +119,22 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(color: white),
                       ),
                       GestureDetector(
-                          child: Text(
-                            'Registre-se agora.',
-                            style: TextStyle(
-                              color: yellow,
-                              fontWeight: FontWeight.w900,
-                            ),
+                        child: Text(
+                          'Registre-se agora.',
+                          style: TextStyle(
+                            color: yellow,
+                            fontWeight: FontWeight.w900,
                           ),
-                          onTap: () {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        const RegisterPage()));
-                          })
+                        ),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const RegisterPage(),
+                            ),
+                          );
+                        },
+                      )
                     ],
                   ),
                 ),
