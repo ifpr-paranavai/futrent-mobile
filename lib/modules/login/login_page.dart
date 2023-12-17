@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                         letterSpacing: 1.5,
                         fontSize: 70.0,
-                        fontWeight: FontWeight.normal,
+                        fontWeight: FontWeight.bold,
                         color: yellow,
                         fontFamily: 'Rubik'),
                   ),
