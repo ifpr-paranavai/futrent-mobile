@@ -5,21 +5,27 @@ class PrimaryTextField extends StatelessWidget {
   final bool obscureText;
   final String hintText;
   final String labelText;
+  final Color labelTextColor;
   final Color fillColor;
   final Color borderColor;
   final Color focusColor;
+  final Color hintTextColor;
   final TextEditingController controller;
   final Icon? icon;
+  final Color prefixIconColor;
 
   PrimaryTextField({
     required this.obscureText,
     required this.hintText,
     required this.labelText,
+    required this.labelTextColor,
     required this.fillColor,
     required this.borderColor,
     required this.focusColor,
+    required this.hintTextColor,
     required this.controller,
     this.icon,
+    required this.prefixIconColor,
   });
 
   @override
@@ -29,15 +35,15 @@ class PrimaryTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         prefixIcon: icon,
-        prefixIconColor: yellow,
+        prefixIconColor: prefixIconColor,
         fillColor: fillColor,
         filled: true,
         hintText: hintText,
-        hintStyle: TextStyle(color: yellow),
+        hintStyle: TextStyle(color: hintTextColor),
         labelText: labelText,
         labelStyle: TextStyle(
           fontSize: 17.0,
-          color: yellow,
+          color: labelTextColor,
           fontWeight: FontWeight.bold,
         ),
         enabledBorder: OutlineInputBorder(

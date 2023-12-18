@@ -2,8 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/styles/button.dart';
 import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/styles/input.dart';
-import 'package:futrent_mobile/styles/button.dart';
+import 'package:futrent_mobile/styles/primary_input.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -51,6 +50,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 borderColor: yellow,
                 fillColor: darkGreen,
                 focusColor: lightGreen,
+                prefixIconColor: yellow,
+                hintTextColor: yellow,
+                labelTextColor: yellow,
                 hintText: 'Insira seu nome',
                 labelText: 'NOME',
                 obscureText: true,
@@ -78,6 +80,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderColor: yellow,
                   fillColor: darkGreen,
                   focusColor: lightGreen,
+                  prefixIconColor: yellow,
+                  hintTextColor: yellow,
+                  labelTextColor: yellow,
                   hintText: 'Insira seu telefone',
                   labelText: 'TELEFONE',
                   obscureText: true,
@@ -104,6 +109,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 borderColor: yellow,
                 fillColor: darkGreen,
                 focusColor: lightGreen,
+                prefixIconColor: yellow,
+                hintTextColor: yellow,
+                labelTextColor: yellow,
                 hintText: 'Insira seu endereço',
                 labelText: 'ENDEREÇO',
                 obscureText: true,
@@ -131,6 +139,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderColor: yellow,
                   fillColor: darkGreen,
                   focusColor: lightGreen,
+                  prefixIconColor: yellow,
+                  hintTextColor: yellow,
+                  labelTextColor: yellow,
                   hintText: 'Insira seu email',
                   labelText: 'EMAIL',
                   obscureText: true,
@@ -157,6 +168,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderColor: yellow,
                   fillColor: darkGreen,
                   focusColor: lightGreen,
+                  prefixIconColor: yellow,
+                  hintTextColor: yellow,
+                  labelTextColor: yellow,
                   hintText: 'Confirme seu email',
                   labelText: 'CONFIRMAÇÃO DE EMAIL',
                   obscureText: true,
@@ -183,6 +197,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderColor: yellow,
                   fillColor: darkGreen,
                   focusColor: lightGreen,
+                  prefixIconColor: yellow,
+                  hintTextColor: yellow,
+                  labelTextColor: yellow,
                   hintText: 'Insira sua senha',
                   labelText: 'SENHA',
                   obscureText: true,
@@ -209,6 +226,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderColor: yellow,
                   fillColor: darkGreen,
                   focusColor: lightGreen,
+                  prefixIconColor: yellow,
+                  hintTextColor: yellow,
+                  labelTextColor: yellow,
                   hintText: 'Confirme sua senha',
                   labelText: 'CONFIRMAÇÃO DE SENHA',
                   obscureText: true,

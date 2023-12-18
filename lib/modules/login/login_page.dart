@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/pages/forgot_password.dart';
+import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/styles/button.dart';
 
 import '../../styles/colors.dart';
-import '../../styles/input.dart';
+import '../../styles/primary_input.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -62,6 +63,9 @@ class _LoginPageState extends State<LoginPage> {
                     borderColor: yellow,
                     fillColor: darkGreen,
                     focusColor: lightGreen,
+                    prefixIconColor: yellow,
+                    hintTextColor: yellow,
+                    labelTextColor: yellow,
                     hintText: 'Email ou nome de usuário',
                     labelText: 'USUÁRIO',
                     obscureText: true,
@@ -74,6 +78,9 @@ class _LoginPageState extends State<LoginPage> {
                     borderColor: yellow,
                     fillColor: darkGreen,
                     focusColor: lightGreen,
+                    prefixIconColor: yellow,
+                    hintTextColor: yellow,
+                    labelTextColor: yellow,
                     hintText: 'Senha',
                     labelText: 'SENHA',
                     obscureText: true,
@@ -101,7 +108,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const HomePage(),
+                      ),
+                    );
+                  },
                   style: buttonPrimary,
                   child: const Text(
                     'ENTRAR',
