@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/pages/play_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -55,7 +56,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     Container(color: Colors.green),
-    Container(color: Colors.blue),
+    PlayPage(),
     Container(color: Colors.yellow),
     Container(color: Colors.red),
     Container(color: Colors.purple)
