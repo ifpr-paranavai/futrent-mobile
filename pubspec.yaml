@@ -64,6 +64,12 @@ flutter:
   assets:
     - assets/images/background-login.jpg
     - assets/images/icon-forgot-password.jpg
+    - assets/images/beach-tennis.png
+    - assets/images/fut7.png
+    - assets/images/futevolei.png
+    - assets/images/futsal.png
+    - assets/images/jogador-de-futebol.png
+    - assets/images/volei-de-praia.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
