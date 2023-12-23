@@ -1,10 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/divider_social_media.dart';
 import 'package:futrent_mobile/components/social_media_icons.dart';
-import 'package:futrent_mobile/styles/button.dart';
 import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/styles/primary_input.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:iconsax/iconsax.dart';
 

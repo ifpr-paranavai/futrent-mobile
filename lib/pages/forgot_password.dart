@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/styles/button.dart';
-import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/styles/primary_input.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordPage extends StatefulWidget {

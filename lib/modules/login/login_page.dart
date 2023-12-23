@@ -5,7 +5,6 @@ import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/styles/button.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/primary_input.dart';

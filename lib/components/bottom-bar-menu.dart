@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/pages/play_page.dart';
+import 'package:futrent_mobile/pages/play%20page/play_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';

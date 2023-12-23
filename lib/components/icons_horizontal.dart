@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/styles/colors.dart';
+import 'package:futrent_mobile/utils/device_utility.dart';
 
 class IconesDestaquesHorizontais extends StatelessWidget {
   const IconesDestaquesHorizontais({
@@ -28,7 +30,8 @@ class IconesDestaquesHorizontais extends StatelessWidget {
               height: 56,
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: backgroundColor,
+                color: backgroundColor ??
+                    (DeviceUtility.isDarkMode(context) ? black : white),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Center(
