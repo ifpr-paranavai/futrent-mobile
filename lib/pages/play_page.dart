@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/home-categories.dart';
-import 'package:futrent_mobile/components/primary_app_bar_container.dart';
-import 'package:futrent_mobile/components/primary_header_container.dart';
+import 'package:futrent_mobile/components/containers/primary_app_bar_container.dart';
+import 'package:futrent_mobile/components/containers/primary_header_container.dart';
 import 'package:futrent_mobile/components/primary_search_bar.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/styles/colors.dart';

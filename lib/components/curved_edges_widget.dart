@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/circular_container.dart';
-import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/styles/curved_edges.dart';
 
 class CurvedEdgesWidget extends StatelessWidget {

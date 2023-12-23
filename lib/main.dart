@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/pages/app_pages.dart';
+import 'package:futrent_mobile/app.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: AppPages(),
-  ));
+  runApp(const App());
 }

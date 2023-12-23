@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/styles/colors.dart';
 
 class PrimaryTextField extends StatelessWidget {
   final bool obscureText;

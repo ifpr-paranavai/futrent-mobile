@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/bottom-bar-menu.dart';
-import 'package:futrent_mobile/styles/button.dart';
-import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/styles/primary_input.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

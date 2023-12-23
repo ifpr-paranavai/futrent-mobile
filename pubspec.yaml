@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   iconsax: ^0.0.8
   get: ^4.6.1
+  flutter_native_splash: ^2.3.2
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +72,11 @@ flutter:
     - assets/images/futsal.png
     - assets/images/jogador-de-futebol.png
     - assets/images/volei-de-praia.png
+    - assets/images/FUTRENT.png
+    - assets/images/FUTRENT branco.png
+    - assets/gif/embaixadinha.gif
+    - assets/gif/tennis.gif
+    - assets/gif/basketball.gif
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
