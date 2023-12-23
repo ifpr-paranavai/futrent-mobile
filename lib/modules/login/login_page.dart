@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/components/divider_social_media.dart';
+import 'package:futrent_mobile/components/social_media_icons.dart';
 import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
@@ -123,77 +125,12 @@ class _LoginPageState extends State<LoginPage> {
                         TextStyle(fontSize: 21.0, fontWeight: FontWeight.w900),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Divider(
-                            color: white,
-                            thickness: 0.5,
-                            indent: 60,
-                            endIndent: 5,
-                          ),
-                        ),
-                        Text(
-                          'Ou entre com',
-                          style: TextStyle(color: white),
-                        ),
-                        Flexible(
-                          child: Divider(
-                            color: white,
-                            thickness: 0.5,
-                            indent: 5,
-                            endIndent: 60,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                DividerSocialMedia(
+                  color: white,
+                  valuePadding: 8.0,
+                  height: 30,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Container(
-                    height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(color: white),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100))),
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: const Image(
-                                image: AssetImage('assets/images/google.png'),
-                                width: 24,
-                                height: 24),
-                            color: white,
-                          ),
-                        ),
-                        const SizedBox(width: 20),
-                        Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(color: white),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(100))),
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: const Image(
-                                image: AssetImage('assets/images/facebook.png'),
-                                width: 24,
-                                height: 24),
-                            color: white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                SocialMediaIcons(valuePadding: 8, circleBorderColor: white),
                 Padding(
                   padding: EdgeInsets.only(top: 70.0),
                   child: Row(

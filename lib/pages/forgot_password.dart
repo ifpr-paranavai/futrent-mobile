@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/styles/button.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/styles/primary_input.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -16,24 +17,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 40, 0.0, 0.0),
-              child: GestureDetector(
-                onTap: () => Navigator.of(context).pop(),
-                child: CircleAvatar(
-                  backgroundColor: darkGreen,
-                  child: Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: white,
-                  ),
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(75, 10, 40, 40),
               child: Container(
@@ -42,7 +30,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 alignment: Alignment.center,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/icon-forgot-password.jpg'),
+                    image: AssetImage('assets/images/icon-forgot-password.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -55,50 +43,33 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Esqueceu sua senha?',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w400,
-                        color: darkGreen,
-                      ),
-                    ),
+                    Text('Esqueceu sua senha?',
+                        style: Theme.of(context).textTheme.headlineMedium),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         'Preencha seu email que enviaremos as informações de recuperação.',
-                        style: TextStyle(color: darkGreen),
+                        style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(15, 50, 15, 40),
-                      child: PrimaryTextField(
-                        borderColor: darkGreen,
-                        fillColor: white,
-                        focusColor: lightGreen,
-                        prefixIconColor: darkGreen,
-                        hintTextColor: darkGreen,
-                        labelTextColor: darkGreen,
-                        hintText: 'Insira seu email de recuperação',
-                        labelText: 'ENDEREÇO DE EMAIL',
-                        obscureText: true,
-                        controller: _controller,
-                        icon: Icon(
-                          Icons.email,
-                        ),
+                      child: TextFormField(
+                        expands: false,
+                        decoration: const InputDecoration(
+                            labelText: 'Insira seu email',
+                            prefixIcon: Icon(Iconsax.direct)),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: buttonPrimary,
-                      child: Text(
-                        'ENVIAR',
-                        style: TextStyle(
-                            color: darkGreen,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 21.0),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(15, 50, 15, 40),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text('Enviar email'),
+                        ),
                       ),
                     ),
                   ],

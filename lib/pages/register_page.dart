@@ -1,8 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/components/divider_social_media.dart';
+import 'package:futrent_mobile/components/social_media_icons.dart';
 import 'package:futrent_mobile/styles/button.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/styles/primary_input.dart';
+import 'package:futrent_mobile/utils/device_utility.dart';
+import 'package:iconsax/iconsax.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -16,257 +20,162 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = DeviceUtility.isDarkMode(context);
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: darkGreen,
-        shadowColor: darkGreen,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            // Lógica para lidar com o pressionamento do botão de voltar
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                borderColor: yellow,
-                fillColor: darkGreen,
-                focusColor: lightGreen,
-                prefixIconColor: yellow,
-                hintTextColor: yellow,
-                labelTextColor: yellow,
-                hintText: 'Insira seu nome',
-                labelText: 'NOME',
-                obscureText: true,
-                controller: _controller,
-                icon: Icon(
-                  Icons.person,
-                ),
-              ),
+        appBar: AppBar(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Registre-se agora mesmo',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const SizedBox(height: 24),
+                Form(
+                    child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                                labelText: 'Nome',
+                                prefixIcon: Icon(Iconsax.user)),
+                          ),
+                        ),
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                                labelText: 'Sobrenome',
+                                prefixIcon: Icon(Iconsax.user)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                          labelText: 'Telefone',
+                          prefixIcon: Icon(Iconsax.mobile)),
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                          labelText: 'Cidade', prefixIcon: Icon(Iconsax.gps)),
+                    ),
+                    const SizedBox(height: 14),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                                labelText: 'Endereço',
+                                prefixIcon: Icon(Iconsax.location)),
+                          ),
+                        ),
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                                labelText: 'Número',
+                                prefixIcon: Icon(Iconsax.location)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                          labelText: 'Email', prefixIcon: Icon(Iconsax.direct)),
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                          labelText: 'Senha',
+                          prefixIcon: Icon(Iconsax.password_check)),
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                          labelText: 'Confirmação de Senha',
+                          prefixIcon: Icon(Iconsax.password_check)),
+                    ),
+                    const SizedBox(height: 14),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: Checkbox(value: true, onChanged: (value) {}),
+                        ),
+                        const SizedBox(height: 14),
+                        Text.rich(
+                          TextSpan(
+                              text: 'Concordo com a ',
+                              style: Theme.of(context).textTheme.labelSmall),
+                        ),
+                        Text.rich(
+                          TextSpan(
+                            text: 'Política de privacidade',
+                            style:
+                                Theme.of(context).textTheme.labelSmall!.apply(
+                                      color: dark ? white : darkGreen,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: dark ? white : darkGreen,
+                                    ),
+                          ),
+                        ),
+                        Text.rich(
+                          TextSpan(
+                              text: ' e ',
+                              style: Theme.of(context).textTheme.labelSmall),
+                        ),
+                        Text.rich(
+                          TextSpan(
+                            text: 'termos de uso',
+                            style:
+                                Theme.of(context).textTheme.labelSmall!.apply(
+                                      color: dark ? white : darkGreen,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: dark ? white : darkGreen,
+                                    ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Criar conta'),
+                      ),
+                    ),
+                    DividerSocialMedia(
+                      color: dark ? white : darkGreen,
+                      valuePadding: 0.0,
+                      height: 30.0,
+                    ),
+                    SocialMediaIcons(
+                        valuePadding: 0.0,
+                        circleBorderColor: dark ? white : darkGreen),
+                  ],
+                ))
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                  borderColor: yellow,
-                  fillColor: darkGreen,
-                  focusColor: lightGreen,
-                  prefixIconColor: yellow,
-                  hintTextColor: yellow,
-                  labelTextColor: yellow,
-                  hintText: 'Insira seu telefone',
-                  labelText: 'TELEFONE',
-                  obscureText: true,
-                  controller: _controller,
-                  icon: const Icon(
-                    Icons.phone,
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                borderColor: yellow,
-                fillColor: darkGreen,
-                focusColor: lightGreen,
-                prefixIconColor: yellow,
-                hintTextColor: yellow,
-                labelTextColor: yellow,
-                hintText: 'Insira seu endereço',
-                labelText: 'ENDEREÇO',
-                obscureText: true,
-                controller: _controller,
-                icon: const Icon(
-                  Icons.location_on,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                  borderColor: yellow,
-                  fillColor: darkGreen,
-                  focusColor: lightGreen,
-                  prefixIconColor: yellow,
-                  hintTextColor: yellow,
-                  labelTextColor: yellow,
-                  hintText: 'Insira seu email',
-                  labelText: 'EMAIL',
-                  obscureText: true,
-                  controller: _controller,
-                  icon: const Icon(
-                    Icons.email,
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                  borderColor: yellow,
-                  fillColor: darkGreen,
-                  focusColor: lightGreen,
-                  prefixIconColor: yellow,
-                  hintTextColor: yellow,
-                  labelTextColor: yellow,
-                  hintText: 'Confirme seu email',
-                  labelText: 'CONFIRMAÇÃO DE EMAIL',
-                  obscureText: true,
-                  controller: _controller,
-                  icon: const Icon(
-                    Icons.email,
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                  borderColor: yellow,
-                  fillColor: darkGreen,
-                  focusColor: lightGreen,
-                  prefixIconColor: yellow,
-                  hintTextColor: yellow,
-                  labelTextColor: yellow,
-                  hintText: 'Insira sua senha',
-                  labelText: 'SENHA',
-                  obscureText: true,
-                  controller: _controller,
-                  icon: const Icon(
-                    Icons.password,
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(40.0, 15.0, 40.0, 0.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[600]!,
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    offset: Offset(2, 3),
-                  ),
-                ],
-              ),
-              child: PrimaryTextField(
-                  borderColor: yellow,
-                  fillColor: darkGreen,
-                  focusColor: lightGreen,
-                  prefixIconColor: yellow,
-                  hintTextColor: yellow,
-                  labelTextColor: yellow,
-                  hintText: 'Confirme sua senha',
-                  labelText: 'CONFIRMAÇÃO DE SENHA',
-                  obscureText: true,
-                  controller: _controller,
-                  icon: const Icon(
-                    Icons.password,
-                  )),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 60.0),
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey[400]!,
-                    blurRadius: 15,
-                    blurStyle: BlurStyle.normal,
-                    spreadRadius: 0.1,
-                    offset: Offset(5, 5),
-                  ),
-                ],
-              ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: buttonPrimary,
-                child: Text(
-                  'CADASTRAR',
-                  style: TextStyle(
-                      color: darkGreen,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 21.0),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

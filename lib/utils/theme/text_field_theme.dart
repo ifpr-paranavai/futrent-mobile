@@ -16,15 +16,15 @@ class CustomTextFieldTheme {
         TextStyle().copyWith(fontSize: 14.0, color: black.withOpacity(0.8)),
     border: OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: darkGreen, width: 1),
+      borderSide: BorderSide(color: black, width: 1),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: darkGreen, width: 1),
+      borderSide: BorderSide(color: black, width: 1),
     ),
     focusedBorder: OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: darkGreen, width: 1),
+      borderSide: BorderSide(color: black, width: 1),
     ),
     errorBorder: OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
@@ -46,11 +46,11 @@ class CustomTextFieldTheme {
     floatingLabelStyle: TextStyle().copyWith(fontSize: 14.0, color: white),
     border: OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: lightGreen, width: 1),
+      borderSide: BorderSide(color: white, width: 1),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
-      borderSide: BorderSide(color: lightGreen, width: 1),
+      borderSide: BorderSide(color: white, width: 1),
     ),
     focusedBorder: OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
