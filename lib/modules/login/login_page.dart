@@ -3,6 +3,7 @@ import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/styles/button.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/primary_input.dart';
@@ -120,6 +121,77 @@ class _LoginPageState extends State<LoginPage> {
                     'ENTRAR',
                     style:
                         TextStyle(fontSize: 21.0, fontWeight: FontWeight.w900),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Divider(
+                            color: white,
+                            thickness: 0.5,
+                            indent: 60,
+                            endIndent: 5,
+                          ),
+                        ),
+                        Text(
+                          'Ou entre com',
+                          style: TextStyle(color: white),
+                        ),
+                        Flexible(
+                          child: Divider(
+                            color: white,
+                            thickness: 0.5,
+                            indent: 5,
+                            endIndent: 60,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Container(
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: white),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100))),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Image(
+                                image: AssetImage('assets/images/google.png'),
+                                width: 24,
+                                height: 24),
+                            color: white,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: white),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(100))),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const Image(
+                                image: AssetImage('assets/images/facebook.png'),
+                                width: 24,
+                                height: 24),
+                            color: white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(

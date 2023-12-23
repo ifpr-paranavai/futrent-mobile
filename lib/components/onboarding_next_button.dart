@@ -20,7 +20,7 @@ class OnboardingNextButton extends StatelessWidget {
               shape: const CircleBorder(), backgroundColor: white),
           child: const Icon(
             Iconsax.arrow_right_3,
-            color: const Color.fromRGBO(0, 115, 206, 1),
+            color: Color.fromRGBO(0, 115, 206, 1),
           ),
         ));
   }
