@@ -15,13 +15,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: orange,
-      //   title: const Text('Futrent', style: TextStyle(fontFamily: 'Rubik')),
-      //   centerTitle: true,
-      //   leading: const Icon(Icons.menu),
-      //   actions: const [Icon(Icons.notifications)],
-      // ),
       bottomNavigationBar: BottomPrimaryBar(),
       body: Obx(() => navigationController
           .screens[navigationController.selectedIndex.value]),

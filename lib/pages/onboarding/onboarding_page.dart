@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/onboarding_dot_navigation.dart';
-import 'package:futrent_mobile/components/onboarding_next_button.dart';
-import 'package:futrent_mobile/components/onboarding_skip.dart';
+import 'package:futrent_mobile/components/onboarding/onboarding_dot_navigation.dart';
+import 'package:futrent_mobile/components/onboarding/onboarding_next_button.dart';
+import 'package:futrent_mobile/components/onboarding/onboarding_skip.dart';
 import 'package:futrent_mobile/pages/onboarding/onboarding_controller.dart';
 import 'package:futrent_mobile/pages/onboarding/onboarding_page_item.dart';
 import 'package:get/get.dart';

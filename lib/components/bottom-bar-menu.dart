@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/pages/play%20page/play_page.dart';
+import 'package:futrent_mobile/pages/home/home_page.dart';
+import 'package:futrent_mobile/pages/play/play_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
+import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
@@ -13,37 +15,50 @@ class BottomPrimaryBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
+    final dark = DeviceUtility.isDarkMode(context);
 
     return Obx(
-      () => BottomNavigationBar(
-        backgroundColor: orange,
-        currentIndex: controller.selectedIndex.value,
-        onTap: (index) => controller.selectedIndex.value = index,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.calendar),
-            label: 'Agenda',
-            backgroundColor: orange,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.play_circle),
+      () => NavigationBar(
+        height: 80,
+        elevation: 0,
+        backgroundColor: dark ? darkGrey : white,
+        selectedIndex: controller.selectedIndex.value,
+        onDestinationSelected: (index) =>
+            controller.selectedIndex.value = index,
+        destinations: [
+          NavigationDestination(
+              icon: Icon(
+                Iconsax.calendar,
+                color: dark ? white : darkGrey,
+              ),
+              label: 'Agenda'),
+          NavigationDestination(
+            icon: Icon(
+              Iconsax.play_circle,
+              color: dark ? white : darkGrey,
+            ),
             label: 'Jogar',
-            backgroundColor: orange,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.home),
+          NavigationDestination(
+            icon: Icon(
+              Iconsax.home,
+              color: dark ? white : darkGrey,
+            ),
             label: 'Menu',
-            backgroundColor: orange,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.message),
+          NavigationDestination(
+            icon: Icon(
+              Iconsax.message,
+              color: dark ? white : darkGrey,
+            ),
             label: 'Conversas',
-            backgroundColor: orange,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Iconsax.user),
+          NavigationDestination(
+            icon: Icon(
+              Iconsax.user,
+              color: dark ? white : darkGrey,
+            ),
             label: 'Perfil',
-            backgroundColor: orange,
           ),
         ],
       ),
@@ -57,7 +72,7 @@ class NavigationController extends GetxController {
   final screens = [
     Container(color: Colors.green),
     PlayPage(),
-    Container(color: Colors.yellow),
+    HomePage(),
     Container(color: Colors.red),
     Container(color: Colors.purple)
   ];

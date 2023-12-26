@@ -10,8 +10,8 @@ import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:iconsax/iconsax.dart';
 
-class PlayPage extends StatelessWidget {
-  const PlayPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,8 @@ class PlayPage extends StatelessWidget {
                         SectionHeading(
                             title: 'Categorias Populares',
                             textColor: white,
-                            showActionButton: false),
+                            showActionButton: false,
+                            onPressed: () {}),
                         const SizedBox(height: 32),
                         const HomeCategories()
                       ],
@@ -61,7 +62,7 @@ class PlayPage extends StatelessWidget {
                   const SizedBox(height: 24),
                   GridLayout(
                     itemCount: 4,
-                    itemBuilder: (_, index) => ProductCardVertical(),
+                    itemBuilder: (_, index) => const ProductCardVertical(),
                   ),
                 ],
               ),

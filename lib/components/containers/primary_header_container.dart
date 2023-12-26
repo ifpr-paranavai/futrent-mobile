@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/circular_container.dart';
 import 'package:futrent_mobile/components/curved_edges_widget.dart';
 import 'package:futrent_mobile/styles/colors.dart';
+import 'package:futrent_mobile/utils/device_utility.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {
   const PrimaryHeaderContainer({
@@ -13,9 +14,10 @@ class PrimaryHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = DeviceUtility.isDarkMode(context);
     return CurvedEdgesWidget(
       child: Container(
-        color: lightGreen,
+        color: dark ? darkGreen : lightGreen,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
           height: 400,
