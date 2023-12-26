@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/pages/home/home_page.dart';
 import 'package:futrent_mobile/pages/play/play_page.dart';
+import 'package:futrent_mobile/pages/user%20settings/settings_user_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:get/get.dart';
@@ -74,6 +75,6 @@ class NavigationController extends GetxController {
     PlayPage(),
     HomePage(),
     Container(color: Colors.red),
-    Container(color: Colors.purple)
+    SettingsUserPage(),
   ];
 }

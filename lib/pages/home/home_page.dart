@@ -8,6 +8,7 @@ import 'package:futrent_mobile/components/product_card_vertical.dart';
 import 'package:futrent_mobile/components/promo_slider.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/styles/colors.dart';
+import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,10 +40,11 @@ class HomePage extends StatelessWidget {
                             showActionButton: false,
                             onPressed: () {}),
                         const SizedBox(height: 32),
-                        const HomeCategories()
+                        const HomeCategories(),
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: Sizes.spaceBtwSections)
                 ],
               ),
             ),

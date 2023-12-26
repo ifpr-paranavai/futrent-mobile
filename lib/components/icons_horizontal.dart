@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
+import 'package:futrent_mobile/utils/sizes.dart';
 
 class IconesDestaquesHorizontais extends StatelessWidget {
   const IconesDestaquesHorizontais({
@@ -22,13 +23,13 @@ class IconesDestaquesHorizontais extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: 8.0),
+        padding: const EdgeInsets.only(right: Sizes.spaceBtwItems),
         child: Column(
           children: [
             Container(
               width: 56,
               height: 56,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(Sizes.sm),
               decoration: BoxDecoration(
                 color: backgroundColor ??
                     (DeviceUtility.isDarkMode(context) ? black : white),
@@ -38,18 +39,22 @@ class IconesDestaquesHorizontais extends StatelessWidget {
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
+                  color: darkGrey,
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: Sizes.spaceBtwItems / 2),
             SizedBox(
                 width: 55,
                 child: Text(
                   title,
                   maxLines: 1,
+                  textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      fontSize: 10, fontFamily: 'Rubik', color: textColor),
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium!
+                      .apply(color: textColor),
                 ))
           ],
         ),

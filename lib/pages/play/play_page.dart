@@ -5,11 +5,9 @@ import 'package:futrent_mobile/components/primary_app_bar.dart';
 import 'package:futrent_mobile/components/primary_search_bar.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/components/sport_card.dart';
-import 'package:futrent_mobile/components/sports_show_case.dart';
 import 'package:futrent_mobile/components/tab_bar.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
-import 'package:futrent_mobile/utils/sizes.dart';
 
 class PlayPage extends StatelessWidget {
   const PlayPage({super.key});
