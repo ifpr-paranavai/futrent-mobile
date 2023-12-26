@@ -31,7 +31,7 @@ class AppTheme {
       fontFamily: 'Rubik',
       brightness: Brightness.dark,
       primaryColor: darkGreen,
-      scaffoldBackgroundColor: darkGrey,
+      scaffoldBackgroundColor: lightBlack,
       textTheme: CustomTextTheme.darkTextTheme,
       chipTheme: CustomChipTheme.darkChipTheme,
       appBarTheme: CustomAppBarTheme.darkAppBarTheme,

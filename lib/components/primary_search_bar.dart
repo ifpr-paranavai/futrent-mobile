@@ -36,12 +36,12 @@ class PrimarySearchBar extends StatelessWidget {
           decoration: BoxDecoration(
             color: showBackground
                 ? dark
-                    ? darkGrey
+                    ? lightBlack
                     : white
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(16.0),
             border: showBorder
-                ? Border.all(color: dark ? white : darkGrey.withOpacity(0.4))
+                ? Border.all(color: dark ? white : lightBlack.withOpacity(0.4))
                 : null,
           ),
           child: Row(

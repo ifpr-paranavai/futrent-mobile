@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/brand_title_text.dart';
-import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -36,7 +35,7 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 4),
-        Icon(Iconsax.verify5, color: Colors.blue, size: 12),
+        const Icon(Iconsax.verify5, color: Colors.blue, size: 12),
       ],
     );
   }

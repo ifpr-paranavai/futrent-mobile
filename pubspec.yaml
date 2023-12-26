@@ -89,6 +89,8 @@ flutter:
     - assets/images/estabelecimentos/ALAMBRADO.jpg
     - assets/images/estabelecimentos/TST.jpg
     - assets/images/estabelecimentos/lala.jpg
+    - assets/images/success-icon.png
+    - assets/images/email-send.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/divider_social_media.dart';
 import 'package:futrent_mobile/components/social_media_icons.dart';
+import 'package:futrent_mobile/pages/signup/verify_email.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -20,18 +22,18 @@ class _RegisterPageState extends State<RegisterPage> {
     final dark = DeviceUtility.isDarkMode(context);
 
     return Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Registre-se agora mesmo',
-                    style: Theme.of(context).textTheme.headlineMedium),
-                const SizedBox(height: 24),
-                Form(
-                    child: Column(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Registre-se agora mesmo',
+                  style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: 24),
+              Form(
+                child: Column(
                   children: [
                     Row(
                       children: [
@@ -156,7 +158,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const VerifyEmailPage()),
                         child: const Text('Criar conta'),
                       ),
                     ),
@@ -169,10 +171,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         valuePadding: 0.0,
                         circleBorderColor: dark ? white : darkGreen),
                   ],
-                ))
-              ],
-            ),
+                ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
