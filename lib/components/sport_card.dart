@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/brand_title_with_verified_icon.dart';
+import 'package:futrent_mobile/components/sport_title_with_verified_icon.dart';
 import 'package:futrent_mobile/components/containers/rounded_container.dart';
 import 'package:futrent_mobile/components/images/circular_image.dart';
 import 'package:futrent_mobile/styles/colors.dart';
@@ -42,7 +42,7 @@ class SportCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BrandTitleWithVerifiedIcon(
+                  const SportTitleWithVerifiedIcon(
                       title: 'teste', textSizes: TextSizes.large),
                   Text('256 locaisasdas',
                       overflow: TextOverflow.ellipsis,

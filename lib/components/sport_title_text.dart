@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
 
-class BrandTitleText extends StatelessWidget {
-  const BrandTitleText(
+class EstabilishmentTitleText extends StatelessWidget {
+  const EstabilishmentTitleText(
       {super.key,
       this.color,
       required this.title,

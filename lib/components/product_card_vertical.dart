@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/brand_title_with_verified_icon.dart';
+import 'package:futrent_mobile/components/sport_title_with_verified_icon.dart';
 import 'package:futrent_mobile/components/containers/rounded_container.dart';
 import 'package:futrent_mobile/components/product_price_text.dart';
 import 'package:futrent_mobile/components/product_title_text.dart';
 import 'package:futrent_mobile/components/images/rounded-image.dart';
+import 'package:futrent_mobile/pages/product%20details/product_details_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/styles/shadow_style.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProductCardVertical extends StatelessWidget {
@@ -18,7 +20,7 @@ class ProductCardVertical extends StatelessWidget {
     final dark = DeviceUtility.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailPage()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -35,7 +37,7 @@ class ProductCardVertical extends StatelessWidget {
               backgroundColor: dark ? black : white,
               child: Stack(
                 children: [
-                  RoundedImage(
+                  const RoundedImage(
                     imageUrl: 'assets/images/estabelecimentos/ALAMBRADO.jpg',
                     applyImageRadius: true,
                   ),
@@ -74,7 +76,7 @@ class ProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   SizedBox(height: Sizes.spaceBtwItems / 2),
-                  BrandTitleWithVerifiedIcon(
+                  SportTitleWithVerifiedIcon(
                     title: 'Futebol Society',
                   ),
                 ],

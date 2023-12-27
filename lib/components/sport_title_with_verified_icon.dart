@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/brand_title_text.dart';
+import 'package:futrent_mobile/components/sport_title_text.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
 import 'package:iconsax/iconsax.dart';
 
-class BrandTitleWithVerifiedIcon extends StatelessWidget {
-  const BrandTitleWithVerifiedIcon({
+class SportTitleWithVerifiedIcon extends StatelessWidget {
+  const SportTitleWithVerifiedIcon({
     super.key,
     required this.title,
     this.maxLines = 1,
@@ -26,7 +26,7 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(
-          child: BrandTitleText(
+          child: EstabilishmentTitleText(
             title: title,
             color: textColor,
             maxLines: maxLines,

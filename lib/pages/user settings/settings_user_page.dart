@@ -4,8 +4,10 @@ import 'package:futrent_mobile/components/primary_app_bar.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/components/settings_menu_tile.dart';
 import 'package:futrent_mobile/components/user_profile_tile.dart';
+import 'package:futrent_mobile/pages/profile/profile_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsUserPage extends StatelessWidget {
@@ -32,7 +34,9 @@ class SettingsUserPage extends StatelessWidget {
                   )),
 
                   ///-- User Profile Card
-                  const UserProfileTile(),
+                  UserProfileTile(
+                    onTap: () => Get.to(() => const ProfilePage()),
+                  ),
                   const SizedBox(
                     height: Sizes.spaceBtwSections,
                   )
