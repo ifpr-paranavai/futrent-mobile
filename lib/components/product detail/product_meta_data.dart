@@ -53,7 +53,7 @@ class ProductMetaData extends StatelessWidget {
         const SizedBox(height: Sizes.spaceBtwItems / 1.5),
 
         /// - Title
-        const ProductTitleText(title: 'Arena Primavera'),
+        const ProductTitleText(title: 'FutArena Recreativa'),
         const SizedBox(height: Sizes.spaceBtwItems / 1.5),
 
         /// - Stack Status
@@ -82,7 +82,7 @@ class ProductMetaData extends StatelessWidget {
               textSizes: TextSizes.medium,
             ),
           ],
-        )
+        ),
       ],
     );
   }

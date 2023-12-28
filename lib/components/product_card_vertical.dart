@@ -26,54 +26,52 @@ class ProductCardVertical extends StatelessWidget {
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [CustomShadowStyle.verticalProductsShadow],
-          borderRadius: BorderRadius.circular(16.0),
-          color: dark ? Colors.grey[850] : white,
+          borderRadius: BorderRadius.circular(Sizes.productImageRadius),
+          color: dark ? darkGrey : white,
         ),
         child: Column(
           children: [
-            RoundedContainer(
-              height: 180,
-              padding: const EdgeInsets.all(8),
-              backgroundColor: dark ? black : white,
-              child: Stack(
-                children: [
-                  const RoundedImage(
-                    imageUrl: 'assets/images/estabelecimentos/ALAMBRADO.jpg',
-                    applyImageRadius: true,
-                  ),
+            Stack(
+              children: [
+                const RoundedImage(
+                  imageUrl: 'assets/images/ALAMBRADO.jpg',
+                  applyImageRadius: true,
+                ),
 
-                  /// -- TAG DE VENDA
-                  Positioned(
-                    top: 3,
-                    child: RoundedContainer(
-                      radius: Sizes.sm,
-                      backgroundColor: orange,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: Sizes.sm, vertical: Sizes.xs),
-                      child: Text(
-                        '25%',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelLarge!
-                            .apply(color: white),
-                      ),
+                /// -- TAG DE VENDA
+                Positioned(
+                  top: 6,
+                  child: RoundedContainer(
+                    radius: Sizes.sm,
+                    backgroundColor: orange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: Sizes.sm, vertical: Sizes.xs),
+                    child: Text(
+                      '25%',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelLarge!
+                          .apply(color: white),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
 
             const SizedBox(height: Sizes.spaceBtwItems / 2),
 
             /// -- DETALHES
             const Padding(
-              padding: EdgeInsets.only(left: Sizes.sm),
+              padding: EdgeInsets.only(
+                right: Sizes.xl,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductTitleText(
-                    title: 'Show de Bola',
+                    title: 'FutArena Recreativa',
                     smallSize: true,
+                    maxLines: 1,
                   ),
                   SizedBox(height: Sizes.spaceBtwItems / 2),
                   SportTitleWithVerifiedIcon(
@@ -88,21 +86,19 @@ class ProductCardVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 8.0),
-                  child: ProductPriceText(
-                    price: '90,00',
-                    isLarge: false,
-                  ),
+                  padding: EdgeInsets.only(left: Sizes.sm),
+                  child: ProductPriceText(price: '90,00'),
                 ),
                 Container(
                   decoration: BoxDecoration(
                       color: black,
                       borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(16))),
+                          topLeft: Radius.circular(Sizes.cardRadiusMd),
+                          bottomRight:
+                              Radius.circular(Sizes.productImageRadius))),
                   child: SizedBox(
-                    width: 32 * 1.2,
-                    height: 32 * 1.2,
+                    width: Sizes.iconLg * 1.2,
+                    height: Sizes.iconLg * 1.2,
                     child: Center(child: Icon(Iconsax.add, color: white)),
                   ),
                 )

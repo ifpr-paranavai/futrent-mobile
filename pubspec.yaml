@@ -40,6 +40,9 @@ dependencies:
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
   carousel_slider: ^4.2.1
+  readmore: ^2.2.0
+  flutter_rating_bar: ^4.0.1
+
 
 
 dev_dependencies:
@@ -87,12 +90,15 @@ flutter:
     - assets/images/estabelecimentos/campo1.jpeg
     - assets/images/soccerball.png
     - assets/images/estabelecimentos/ALAMBRADO.jpg
+    - assets/images/ALAMBRADO.jpg
     - assets/images/estabelecimentos/TST.jpg
     - assets/images/estabelecimentos/lala.jpg
     - assets/images/success-icon.png
     - assets/images/email-send.png
     - assets/images/user.png
     - assets/images/user2.png
+    - assets/images/nike-shoes.png
+    - assets/images/romario.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

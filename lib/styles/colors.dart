@@ -5,6 +5,7 @@ Color lightGreen = Color.fromRGBO(191, 191, 94, 1);
 Color yellow = Color.fromRGBO(253, 210, 130, 1);
 Color black = Color.fromRGBO(0, 0, 0, 1);
 Color darkGrey = Color.fromRGBO(53, 52, 52, 1);
+Color grey = Color.fromRGBO(112, 112, 112, 1);
 Color lightBlack = Color.fromRGBO(25, 24, 24, 1);
 Color white = Color.fromRGBO(255, 255, 255, 1);
 Color orange = Color.fromRGBO(213, 107, 29, 1);

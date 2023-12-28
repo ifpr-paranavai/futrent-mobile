@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/sport_title_text.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
+import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SportTitleWithVerifiedIcon extends StatelessWidget {
@@ -34,8 +35,8 @@ class SportTitleWithVerifiedIcon extends StatelessWidget {
             brandTextSize: textSizes,
           ),
         ),
-        const SizedBox(width: 4),
-        const Icon(Iconsax.verify5, color: Colors.blue, size: 12),
+        const SizedBox(width: Sizes.xs),
+        const Icon(Iconsax.verify5, color: Colors.blue, size: Sizes.iconXs),
       ],
     );
   }

@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/product%20detail/product_image_slider.dart';
 import 'package:futrent_mobile/components/product%20detail/product_meta_data.dart';
 import 'package:futrent_mobile/components/product%20detail/rating_and_share.dart';
+import 'package:futrent_mobile/components/section_heading.dart';
+import 'package:futrent_mobile/pages/product%20reviews/product_reviews.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
+import 'package:futrent_mobile/utils/texts.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
 
 class ProductDetailPage extends StatelessWidget {
   const ProductDetailPage({super.key});
@@ -20,22 +26,67 @@ class ProductDetailPage extends StatelessWidget {
             ProductImageSlider(dark: dark),
 
             /// -- PRODUCT NAME
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                   right: Sizes.defaultSpace,
                   left: Sizes.defaultSpace,
                   bottom: Sizes.defaultSpace),
               child: Column(
                 children: [
                   /// - Rating & Share
-                  RatingAndShare(),
+                  const RatingAndShare(),
 
                   /// - Price, Description Stack & Brand
-                  ProductMetaData()
+                  const ProductMetaData(),
 
                   /// - Attributes
                   /// - Checkout Button
+                  const SizedBox(height: Sizes.spaceBtwSections),
+                  SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text('Adicionar ao carrinho'))),
+
+                  const SizedBox(height: Sizes.spaceBtwSections),
+
                   /// - Description
+                  const SectionHeading(
+                      title: 'Descrição', showActionButton: false),
+                  const SizedBox(height: Sizes.spaceBtwItems),
+                  const ReadMoreText(
+                    Texts.descriptionEstabilishment,
+                    trimLines: 2,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: ' mais',
+                    trimExpandedText: ' menos',
+                    moreStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  ),
+
+                  /// - Reviews
+                  const Divider(),
+                  const SizedBox(height: Sizes.spaceBtwItems),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const SectionHeading(
+                        title: 'Comentários(199)',
+                        showActionButton: false,
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          Iconsax.arrow_right_3,
+                          size: 18,
+                        ),
+                        onPressed: () =>
+                            Get.to(() => const ProductReviewPage()),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: Sizes.spaceBtwSections),
                 ],
               ),
             )
