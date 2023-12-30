@@ -41,7 +41,7 @@ class ProductImageSlider extends StatelessWidget {
                   itemBuilder: (_, index) => RoundedImage(
                       width: 80,
                       backgroundColor: dark ? black : white,
-                      border: Border.all(color: orange, width: 2.0),
+                      border: Border.all(color: lightGreen, width: 2.0),
                       imageUrl: 'assets/images/estabelecimentos/ALAMBRADO.jpg'),
                 ),
               ),

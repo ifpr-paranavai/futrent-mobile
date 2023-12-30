@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/components/product%20detail/button_add_to_cart.dart';
 import 'package:futrent_mobile/components/product%20detail/product_image_slider.dart';
 import 'package:futrent_mobile/components/product%20detail/product_meta_data.dart';
 import 'package:futrent_mobile/components/product%20detail/rating_and_share.dart';
@@ -19,6 +20,7 @@ class ProductDetailPage extends StatelessWidget {
     final dark = DeviceUtility.isDarkMode(context);
 
     return Scaffold(
+      bottomNavigationBar: const ButtonAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -45,8 +47,7 @@ class ProductDetailPage extends StatelessWidget {
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text('Adicionar ao carrinho'))),
+                          onPressed: () {}, child: const Text('Alugar'))),
 
                   const SizedBox(height: Sizes.spaceBtwSections),
 
@@ -86,7 +87,7 @@ class ProductDetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: Sizes.spaceBtwSections),
+                  const SizedBox(height: Sizes.spaceBtwItems),
                 ],
               ),
             )

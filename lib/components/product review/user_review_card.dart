@@ -57,7 +57,7 @@ class UserReviewCard extends StatelessWidget {
 
         /// -- Company Review
         RoundedContainer(
-          backgroundColor: dark ? darkGrey : grey,
+          backgroundColor: dark ? lightGrey : lightGrey,
           child: Padding(
             padding: const EdgeInsets.all(Sizes.md),
             child: Column(
