@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/components/cart/cart_count_icon.dart';
 import 'package:futrent_mobile/components/primary_app_bar.dart';
+import 'package:futrent_mobile/pages/cart/cart_page.dart';
+import 'package:futrent_mobile/styles/colors.dart';
+import 'package:get/get.dart';
 
 class AppBarPrimaryContainer extends StatelessWidget {
   const AppBarPrimaryContainer({
@@ -23,6 +27,11 @@ class AppBarPrimaryContainer extends StatelessWidget {
           ),
         ],
       ),
+      actions: [
+        CartCountIcon(
+          onPressed: () => Get.to(() => const CartPage()),
+        )
+      ],
     );
   }
 }
