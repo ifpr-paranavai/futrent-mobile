@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/cart/cart_count_icon.dart';
 import 'package:futrent_mobile/components/primary_app_bar.dart';
 import 'package:futrent_mobile/pages/cart/cart_page.dart';
-import 'package:futrent_mobile/styles/colors.dart';
 import 'package:get/get.dart';
 
 class AppBarPrimaryContainer extends StatelessWidget {
@@ -13,7 +12,7 @@ class AppBarPrimaryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBarPrimary(
-      title: Column(
+      title: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Ótimo dia para jogar!',
