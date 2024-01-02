@@ -64,42 +64,53 @@ class ProductCardHorizontal extends StatelessWidget {
           /// -- DETAILS
           Padding(
             padding: const EdgeInsets.only(top: Sizes.sm, left: Sizes.sm),
-            child: Column(
-              children: [
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ProductTitleText(title: 'FutArena', smallSize: true),
-                    SizedBox(height: Sizes.spaceBtwItems / 2),
-                    SportTitleWithVerifiedIcon(title: 'Futebol Society'),
-                  ],
-                ),
+            child: SizedBox(
+              width: 164,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    width: 160,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProductTitleText(title: 'FutArena', smallSize: true),
+                        SizedBox(height: Sizes.spaceBtwItems / 2),
+                        SportTitleWithVerifiedIcon(title: 'Futebol Society'),
+                      ],
+                    ),
+                  ),
 
-                const Spacer(),
+                  const Spacer(),
 
-                /// -- Price
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const ProductPriceText(price: '90,00'),
+                  /// -- Price
+                  Container(
+                    width: 165,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const ProductPriceText(price: '90,00'),
 
-                    /// -- Add  to cart
-                    Container(
-                      decoration: BoxDecoration(
-                          color: black,
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(Sizes.cardRadiusMd),
-                              bottomRight:
-                                  Radius.circular(Sizes.productImageRadius))),
-                      child: SizedBox(
-                        width: Sizes.iconLg * 1.2,
-                        height: Sizes.iconLg * 1.2,
-                        child: Center(child: Icon(Iconsax.add, color: white)),
-                      ),
-                    )
-                  ],
-                )
-              ],
+                        /// -- Add  to cart
+                        Container(
+                          decoration: BoxDecoration(
+                              color: black,
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(Sizes.cardRadiusMd),
+                                  bottomRight: Radius.circular(
+                                      Sizes.productImageRadius))),
+                          child: SizedBox(
+                            width: Sizes.iconLg * 1.2,
+                            height: Sizes.iconLg * 1.2,
+                            child:
+                                Center(child: Icon(Iconsax.add, color: white)),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],
