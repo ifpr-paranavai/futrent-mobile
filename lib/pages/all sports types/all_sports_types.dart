@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/all%20estabilishments/sortable_estabilishments.dart';
 import 'package:futrent_mobile/components/grid/grid_layout.dart';
 import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/components/common/section_heading.dart';
