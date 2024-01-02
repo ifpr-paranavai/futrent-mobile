@@ -6,8 +6,10 @@ import 'package:futrent_mobile/components/primary_search_bar.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/components/sport_card.dart';
 import 'package:futrent_mobile/components/tab_bar.dart';
+import 'package:futrent_mobile/pages/all%20sports%20types/all_sports_types.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
+import 'package:get/get.dart';
 
 class PlayPage extends StatelessWidget {
   const PlayPage({super.key});
@@ -56,7 +58,8 @@ class PlayPage extends StatelessWidget {
                         //featured sports types
                         SectionHeading(
                           title: 'Categorias',
-                          onPressed: () {},
+                          onPressed: () =>
+                              Get.to(() => const AllSportsTypesPages()),
                         ),
                         const SizedBox(
                           height: 24,

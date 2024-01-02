@@ -7,8 +7,10 @@ import 'package:futrent_mobile/components/primary_search_bar.dart';
 import 'package:futrent_mobile/components/product_card_vertical.dart';
 import 'package:futrent_mobile/components/promo_slider.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
+import 'package:futrent_mobile/pages/all%20estabilishments/all_estabilishments.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,7 +63,16 @@ class HomePage extends StatelessWidget {
                       'assets/images/banners/exemplo3.png'
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: Sizes.spaceBtwSections),
+
+                  /// HEADING
+                  SectionHeading(
+                      title: 'Estabelecimentos',
+                      showActionButton: true,
+                      onPressed: () =>
+                          Get.to(() => const AllEstabilishmentsPage())),
+                  const SizedBox(height: Sizes.spaceBtwItems),
+
                   GridLayout(
                     itemCount: 4,
                     itemBuilder: (_, index) => const ProductCardVertical(),
