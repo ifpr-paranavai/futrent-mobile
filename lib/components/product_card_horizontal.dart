@@ -26,7 +26,7 @@ class ProductCardHorizontal extends StatelessWidget {
         children: [
           /// -- IMAGE
           RoundedContainer(
-            backgroundColor: dark ? darkGrey : Colors.red,
+            backgroundColor: dark ? darkGrey : lightGrey,
             height: 120,
             padding: const EdgeInsets.all(Sizes.sm),
             child: Stack(
