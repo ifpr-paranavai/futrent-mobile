@@ -4,7 +4,7 @@ import 'package:futrent_mobile/components/icons/home-categories.dart';
 import 'package:futrent_mobile/components/containers/primary_app_bar_container.dart';
 import 'package:futrent_mobile/components/containers/primary_header_container.dart';
 import 'package:futrent_mobile/components/search%20bar/primary_search_bar.dart';
-import 'package:futrent_mobile/components/cards/product_card_vertical.dart';
+import 'package:futrent_mobile/components/cards/estabilishment_card_vertical.dart';
 import 'package:futrent_mobile/components/slider/promo_slider.dart';
 import 'package:futrent_mobile/components/common/section_heading.dart';
 import 'package:futrent_mobile/pages/all%20estabilishments/all_estabilishments.dart';

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "468280729237",
+    "project_id": "futrent-a9c4f",
+    "storage_bucket": "futrent-a9c4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468280729237:android:d8791160b22297f5f6059c",
+        "android_client_info": {
+          "package_name": "com.example.futrent_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468280729237-u6s5cta450fb2nulcf650qemdhd2b6e0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.futrent_mobile",
+            "certificate_hash": "9e1349ba6fab92a076bc43ccf4469a28c88fe9b5"
+          }
+        },
+        {
+          "client_id": "468280729237-80no8vaid7uvsouohp4gr1seifj07j8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpaOMquWJkVu9MMhs3luT9w8Qp26RqpnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468280729237-80no8vaid7uvsouohp4gr1seifj07j8l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468280729237-13dlrbit1cv4jhsv277mmesvum7v7fb3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.futrentMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
