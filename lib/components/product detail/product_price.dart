@@ -5,8 +5,8 @@ class ProductPriceText extends StatelessWidget {
       {super.key,
       this.currencySign = 'R\$',
       required this.price,
-      this.maxLines = 1,
       this.isLarge = false,
+      this.maxLines = 1,
       this.lineThrough = false});
 
   final String currencySign, price;

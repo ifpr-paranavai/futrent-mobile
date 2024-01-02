@@ -89,6 +89,8 @@ class ProductCardVertical extends StatelessWidget {
                   padding: EdgeInsets.only(left: Sizes.sm),
                   child: ProductPriceText(price: '90,00'),
                 ),
+
+                /// -- ADD TO CART BUTTON
                 Container(
                   decoration: BoxDecoration(
                       color: black,
