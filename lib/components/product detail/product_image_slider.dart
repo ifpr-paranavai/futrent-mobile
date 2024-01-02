@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/curved_edges_widget.dart';
+import 'package:futrent_mobile/components/common/curved_edges_widget.dart';
 import 'package:futrent_mobile/components/images/rounded-image.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 

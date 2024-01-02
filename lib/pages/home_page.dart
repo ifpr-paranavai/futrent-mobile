@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/bottom-bar-menu.dart';
+import 'package:futrent_mobile/components/common/bottom-bar-menu.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {

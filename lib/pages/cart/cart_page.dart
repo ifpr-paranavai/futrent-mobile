@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/cart/cart_item.dart';
 import 'package:futrent_mobile/components/cart/product_quantity_with_add_remove.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
-import 'package:futrent_mobile/components/product_price_text.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/components/common/product_price_text.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 
 class CartPage extends StatelessWidget {

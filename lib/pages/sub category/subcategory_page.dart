@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/images/rounded-image.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
-import 'package:futrent_mobile/components/product_card_horizontal.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/components/cards/product_card_horizontal.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 
 class SubCategoriesPage extends StatelessWidget {

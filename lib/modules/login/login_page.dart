@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/divider_social_media.dart';
-import 'package:futrent_mobile/components/social_media_icons.dart';
+import 'package:futrent_mobile/components/common/divider_social_media.dart';
+import 'package:futrent_mobile/components/icons/social_media_icons.dart';
 import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/register_page.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/components/product%20review/custom_rating_bar_indicator.dart';
 import 'package:futrent_mobile/components/product%20review/overall_product_rating.dart';
 import 'package:futrent_mobile/components/product%20review/user_review_card.dart';

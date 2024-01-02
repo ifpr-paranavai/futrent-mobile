@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/images/circular_image.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
-import 'package:futrent_mobile/components/profile_menu.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/components/common/profile_menu.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 

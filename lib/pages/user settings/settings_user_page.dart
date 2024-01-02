@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/primary_header_container.dart';
 import 'package:futrent_mobile/components/orders/order.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
-import 'package:futrent_mobile/components/settings_menu_tile.dart';
-import 'package:futrent_mobile/components/user_profile_tile.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
+import 'package:futrent_mobile/components/tile/settings_menu_tile.dart';
+import 'package:futrent_mobile/components/tile/user_profile_tile.dart';
 import 'package:futrent_mobile/pages/profile/profile_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/sizes.dart';

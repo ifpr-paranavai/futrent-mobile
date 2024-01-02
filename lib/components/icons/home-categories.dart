@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/icons_horizontal.dart';
+import 'package:futrent_mobile/components/icons/icons_horizontal.dart';
 import 'package:futrent_mobile/pages/sub%20category/subcategory_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:get/get.dart';

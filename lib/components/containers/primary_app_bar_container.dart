@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/cart/cart_count_icon.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/pages/cart/cart_page.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/sport_title_text.dart';
+import 'package:futrent_mobile/components/common/sport_title_text.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/all%20estabilishments/sortable_estabilishments.dart';
-import 'package:futrent_mobile/components/grid_layout.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
-import 'package:futrent_mobile/components/sport_card.dart';
+import 'package:futrent_mobile/components/grid/grid_layout.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
+import 'package:futrent_mobile/components/cards/sport_card.dart';
 import 'package:futrent_mobile/pages/all%20sports%20types/sport_type.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:get/get.dart';

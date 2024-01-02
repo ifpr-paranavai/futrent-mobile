@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/grid_layout.dart';
-import 'package:futrent_mobile/components/product_card_vertical.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
-import 'package:futrent_mobile/components/sports_show_case.dart';
+import 'package:futrent_mobile/components/grid/grid_layout.dart';
+import 'package:futrent_mobile/components/cards/product_card_vertical.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
+import 'package:futrent_mobile/components/common/sports_show_case.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 
 class CategoryTab extends StatelessWidget {

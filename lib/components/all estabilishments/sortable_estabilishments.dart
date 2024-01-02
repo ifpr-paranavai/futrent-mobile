@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/grid_layout.dart';
-import 'package:futrent_mobile/components/product_card_vertical.dart';
+import 'package:futrent_mobile/components/grid/grid_layout.dart';
+import 'package:futrent_mobile/components/cards/product_card_vertical.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 

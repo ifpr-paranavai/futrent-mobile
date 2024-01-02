@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/circular_container.dart';
-import 'package:futrent_mobile/components/curved_edges_widget.dart';
+import 'package:futrent_mobile/components/common/curved_edges_widget.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 

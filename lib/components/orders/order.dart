@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/orders/order_list_items.dart';
-import 'package:futrent_mobile/components/primary_app_bar.dart';
+import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 
 class OrderPage extends StatelessWidget {

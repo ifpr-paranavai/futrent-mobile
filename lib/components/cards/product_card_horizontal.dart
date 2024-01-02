@@ -3,7 +3,7 @@ import 'package:futrent_mobile/components/containers/rounded_container.dart';
 import 'package:futrent_mobile/components/images/rounded-image.dart';
 import 'package:futrent_mobile/components/product%20detail/product_price.dart';
 import 'package:futrent_mobile/components/product%20detail/product_title_text.dart';
-import 'package:futrent_mobile/components/sport_title_with_verified_icon.dart';
+import 'package:futrent_mobile/components/icons/sport_title_with_verified_icon.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';

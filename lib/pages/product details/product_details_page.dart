@@ -3,7 +3,7 @@ import 'package:futrent_mobile/components/product%20detail/button_add_to_cart.da
 import 'package:futrent_mobile/components/product%20detail/product_image_slider.dart';
 import 'package:futrent_mobile/components/product%20detail/product_meta_data.dart';
 import 'package:futrent_mobile/components/product%20detail/rating_and_share.dart';
-import 'package:futrent_mobile/components/section_heading.dart';
+import 'package:futrent_mobile/components/common/section_heading.dart';
 import 'package:futrent_mobile/pages/product%20reviews/product_reviews.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';

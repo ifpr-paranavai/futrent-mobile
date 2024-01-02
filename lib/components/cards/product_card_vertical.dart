@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/sport_title_with_verified_icon.dart';
+import 'package:futrent_mobile/components/icons/sport_title_with_verified_icon.dart';
 import 'package:futrent_mobile/components/containers/rounded_container.dart';
-import 'package:futrent_mobile/components/product_price_text.dart';
-import 'package:futrent_mobile/components/product_title_text.dart';
+import 'package:futrent_mobile/components/common/product_price_text.dart';
+import 'package:futrent_mobile/components/common/product_title_text.dart';
 import 'package:futrent_mobile/components/images/rounded-image.dart';
 import 'package:futrent_mobile/pages/product%20details/product_details_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
