@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/primary_header_container.dart';
+import 'package:futrent_mobile/components/orders/order.dart';
 import 'package:futrent_mobile/components/primary_app_bar.dart';
 import 'package:futrent_mobile/components/section_heading.dart';
 import 'package:futrent_mobile/components/settings_menu_tile.dart';
@@ -72,7 +73,7 @@ class SettingsUserPage extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: 'Minhas Partidas',
                     subtitle: 'Partidas que já joguei',
-                    onTap: () {},
+                    onTap: () => Get.to(() => const OrderPage()),
                   ),
                   SettingsMenuTile(
                     icon: Iconsax.notification,
