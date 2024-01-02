@@ -12,8 +12,10 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarPrimary(
-          title: Text('Carrinho',
-              style: Theme.of(context).textTheme.headlineSmall)),
+        title:
+            Text('Carrinho', style: Theme.of(context).textTheme.headlineSmall),
+        showBackArrow: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(Sizes.defaultSpace),
         child: ListView.separated(
