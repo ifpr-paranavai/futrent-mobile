@@ -5,8 +5,8 @@ import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 
-class OrderListItems extends StatelessWidget {
-  const OrderListItems({super.key});
+class GamesListHistoric extends StatelessWidget {
+  const GamesListHistoric({super.key});
 
   @override
   Widget build(BuildContext context) {
