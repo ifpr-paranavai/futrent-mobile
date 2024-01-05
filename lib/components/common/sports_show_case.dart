@@ -19,7 +19,7 @@ class SportsShowCase extends StatelessWidget {
     return RoundedContainer(
       showBorder: true,
       borderColor: darkGrey,
-      padding: EdgeInsets.all(Sizes.md),
+      padding: const EdgeInsets.all(Sizes.md),
       backgroundColor: Colors.transparent,
       margin: const EdgeInsets.only(bottom: Sizes.spaceBtwItems),
       child: Column(

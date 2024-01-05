@@ -43,17 +43,20 @@ class UserModel {
     };
   }
 
-  // factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if(document.data() != null){
-  //     final data = document.data()!;
-  //     return UserModel(
-  //       id: document.id,
-  //       firstName: data['firstName'] ?? '',
-  //       lastName: data['lastName'] ?? '',
-  //       email: data['email'] ?? '',
-  //       phoneNumber: data['phoneNumber'] ?? '',
-  //       profilePicture: data['profilePicture'] ?? '',
-  //     );
-  //   }
-  // }
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+        id: document.id,
+        firstName: data['firstName'] ?? '',
+        lastName: data['lastName'] ?? '',
+        email: data['email'] ?? '',
+        phoneNumber: data['phoneNumber'] ?? '',
+        profilePicture: data['profilePicture'] ?? '',
+      );
+    } else {
+      return UserModel.empty();
+    }
+  }
 }

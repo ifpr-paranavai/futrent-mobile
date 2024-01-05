@@ -6,7 +6,7 @@ final ButtonStyle buttonPrimary = ElevatedButton.styleFrom(
   foregroundColor: darkGreen,
   minimumSize: const Size(327, 50),
   elevation: 0,
-  padding: EdgeInsets.all(16.0),
+  padding: const EdgeInsets.all(16.0),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(50)),
   ),

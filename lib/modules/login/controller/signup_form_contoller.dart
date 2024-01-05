@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/modules/login/model/user_model.dart';
 import 'package:futrent_mobile/modules/login/repository/authentication_repository.dart';
@@ -35,11 +35,13 @@ class SignUpController extends GetxController {
       //Check internet connectivity
       final isConnected = await NetworkManager.instance.isConnectected();
       if (!isConnected) {
+        FullScreenLoader.stopLoading();
         return;
       }
 
       //Form Validation
       if (!signupFormKey.currentState!.validate()) {
+        FullScreenLoader.stopLoading();
         return;
       }
 
@@ -66,6 +68,10 @@ class SignUpController extends GetxController {
         phoneNumber: phone.text.trim(),
         profilePicture: '',
       );
+
+      if (kDebugMode) {
+        print("New User Data: $newUser");
+      }
 
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);

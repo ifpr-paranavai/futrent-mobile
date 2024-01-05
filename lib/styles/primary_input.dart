@@ -13,7 +13,7 @@ class PrimaryTextField extends StatelessWidget {
   final Icon? icon;
   final Color prefixIconColor;
 
-  PrimaryTextField({
+  const PrimaryTextField({super.key, 
     required this.obscureText,
     required this.hintText,
     required this.labelText,
@@ -50,12 +50,12 @@ class PrimaryTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           gapPadding: 10.0,
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
           borderSide: BorderSide(width: 2.5, color: borderColor),
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: borderColor),
-          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(40.0)),
         ),
         focusColor: focusColor,
       ),

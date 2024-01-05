@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:futrent_mobile/utils/enums/enums.dart';
 
 class EstabilishmentTitleText extends StatelessWidget {

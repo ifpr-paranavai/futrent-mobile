@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomPrimaryBar(),
+      bottomNavigationBar: const BottomPrimaryBar(),
       body: Obx(() => navigationController
           .screens[navigationController.selectedIndex.value]),
     );

@@ -51,7 +51,7 @@ class Validator {
       return 'Preencha o telefone';
     }
 
-    final phoneRegExp = RegExp(r'^\+?0[0-9]{10}$');
+    final phoneRegExp = RegExp(r'^\+?([1-9]{2})[0-9]{9}$');
 
     if (!phoneRegExp.hasMatch(value)) {
       return 'Telefone inválido';

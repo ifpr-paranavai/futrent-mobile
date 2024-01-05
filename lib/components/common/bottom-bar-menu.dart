@@ -5,9 +5,6 @@ import 'package:futrent_mobile/pages/user%20settings/settings_user_page.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BottomPrimaryBar extends StatelessWidget {
@@ -72,9 +69,9 @@ class NavigationController extends GetxController {
 
   final screens = [
     Container(color: Colors.green),
-    PlayPage(),
-    HomePage(),
+    const PlayPage(),
+    const HomePage(),
     Container(color: Colors.red),
-    SettingsUserPage(),
+    const SettingsUserPage(),
   ];
 }

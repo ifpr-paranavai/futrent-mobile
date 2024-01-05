@@ -8,13 +8,13 @@ class CustomTextFieldTheme {
     errorMaxLines: 3,
     prefixIconColor: orange,
     suffixIconColor: orange,
-    labelStyle: TextStyle().copyWith(fontSize: 14.0, color: black),
+    labelStyle: const TextStyle().copyWith(fontSize: 14.0, color: black),
     hintStyle:
-        TextStyle().copyWith(fontSize: 14.0, color: black.withOpacity(0.5)),
-    errorStyle: TextStyle().copyWith(fontStyle: FontStyle.normal),
+        const TextStyle().copyWith(fontSize: 14.0, color: black.withOpacity(0.5)),
+    errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:
-        TextStyle().copyWith(fontSize: 14.0, color: black.withOpacity(0.8)),
-    border: OutlineInputBorder().copyWith(
+        const TextStyle().copyWith(fontSize: 14.0, color: black.withOpacity(0.8)),
+    border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: black, width: 1),
     ),
@@ -22,15 +22,15 @@ class CustomTextFieldTheme {
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: black, width: 1),
     ),
-    focusedBorder: OutlineInputBorder().copyWith(
+    focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: black, width: 1),
     ),
-    errorBorder: OutlineInputBorder().copyWith(
+    errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: orange, width: 1),
     ),
-    focusedErrorBorder: OutlineInputBorder().copyWith(
+    focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: orange, width: 2),
     ),
@@ -40,11 +40,11 @@ class CustomTextFieldTheme {
     errorMaxLines: 2,
     prefixIconColor: orange,
     suffixIconColor: orange,
-    labelStyle: TextStyle().copyWith(fontSize: 14.0, color: white),
-    hintStyle: TextStyle().copyWith(fontSize: 14.0, color: white),
-    errorStyle: TextStyle().copyWith(fontStyle: FontStyle.normal),
-    floatingLabelStyle: TextStyle().copyWith(fontSize: 14.0, color: white),
-    border: OutlineInputBorder().copyWith(
+    labelStyle: const TextStyle().copyWith(fontSize: 14.0, color: white),
+    hintStyle: const TextStyle().copyWith(fontSize: 14.0, color: white),
+    errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
+    floatingLabelStyle: const TextStyle().copyWith(fontSize: 14.0, color: white),
+    border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: white, width: 1),
     ),
@@ -52,15 +52,15 @@ class CustomTextFieldTheme {
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: white, width: 1),
     ),
-    focusedBorder: OutlineInputBorder().copyWith(
+    focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: lightGreen, width: 1),
     ),
-    errorBorder: OutlineInputBorder().copyWith(
+    errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: orange, width: 1),
     ),
-    focusedErrorBorder: OutlineInputBorder().copyWith(
+    focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(14),
       borderSide: BorderSide(color: orange, width: 2),
     ),

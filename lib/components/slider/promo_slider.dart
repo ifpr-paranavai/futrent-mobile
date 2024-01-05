@@ -37,7 +37,7 @@ class PromoSlider extends StatelessWidget {
                   CircularContainer(
                     width: 20,
                     height: 4,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     backgroundColor: controller.carouselController.value == i
                         ? orange
                         : Colors.grey,

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:futrent_mobile/modules/login/login_page.dart';
 import 'package:futrent_mobile/pages/onboarding/onboarding_page.dart';

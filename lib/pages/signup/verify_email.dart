@@ -22,12 +22,12 @@ class VerifyEmailPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpace),
+          padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
               ///image
               Image(
-                image: AssetImage('assets/images/email-send.png'),
+                image: const AssetImage('assets/images/email-send.png'),
                 width: DeviceUtility.getScreenWidth() * 0.6,
               ),
               const SizedBox(height: Sizes.spaceBtwItems),

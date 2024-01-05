@@ -16,7 +16,7 @@ class DividerSocialMedia extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(valuePadding),
-      child: Container(
+      child: SizedBox(
         height: height,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

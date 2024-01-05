@@ -84,7 +84,7 @@ class ProductCardHorizontal extends StatelessWidget {
                   const Spacer(),
 
                   /// -- Price
-                  Container(
+                  SizedBox(
                     width: 165,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

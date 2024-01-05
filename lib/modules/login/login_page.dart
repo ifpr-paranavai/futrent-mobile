@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 60.0),
+                    padding: const EdgeInsets.only(top: 60.0),
                     child: Text(
                       'FUTRENT',
                       style: TextStyle(
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     textAlign: TextAlign.center,
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(30.0, 120.0, 30.0, 5.0),
+                    padding: const EdgeInsets.fromLTRB(30.0, 120.0, 30.0, 5.0),
                     child: PrimaryTextField(
                       borderColor: yellow,
                       fillColor: darkGreen,
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
+                    padding: const EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
                     child: PrimaryTextField(
                       borderColor: yellow,
                       fillColor: darkGreen,
@@ -139,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SocialMediaIcons(valuePadding: 8, circleBorderColor: white),
                   Padding(
-                    padding: EdgeInsets.only(top: 70.0),
+                    padding: const EdgeInsets.only(top: 70.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -15,7 +15,7 @@ class SocialMediaIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(valuePadding),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +23,7 @@ class SocialMediaIcons extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   border: Border.all(color: circleBorderColor),
-                  borderRadius: BorderRadius.all(Radius.circular(100))),
+                  borderRadius: const BorderRadius.all(Radius.circular(100))),
               child: IconButton(
                 onPressed: () {},
                 icon: const Image(
@@ -37,7 +37,7 @@ class SocialMediaIcons extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   border: Border.all(color: circleBorderColor),
-                  borderRadius: BorderRadius.all(Radius.circular(100))),
+                  borderRadius: const BorderRadius.all(Radius.circular(100))),
               child: IconButton(
                 onPressed: () {},
                 icon: const Image(

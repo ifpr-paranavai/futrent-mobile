@@ -107,6 +107,7 @@ flutter:
     - assets/images/nike-shoes.png
     - assets/images/romario.jpg
     - assets/images/sammy-line-travel-backpack-with-passport-and-air-ticket.gif
+    - assets/images/colors-woman-standing-with-an-apple-1.gif
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

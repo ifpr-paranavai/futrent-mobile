@@ -4,6 +4,7 @@ import 'package:futrent_mobile/components/icons/social_media_icons.dart';
 import 'package:futrent_mobile/modules/login/signup_form.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
+import 'package:futrent_mobile/utils/sizes.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -42,6 +43,9 @@ class _RegisterPageState extends State<RegisterPage> {
               SocialMediaIcons(
                   valuePadding: 0.0,
                   circleBorderColor: dark ? white : darkGreen),
+              const SizedBox(
+                height: Sizes.defaultSpace,
+              )
             ],
           ),
         ),
