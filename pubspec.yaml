@@ -44,7 +44,11 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   firebase_core: ^2.24.2
   get_storage: ^2.1.1
-
+  lottie: ^2.7.0
+  connectivity_plus: ^5.0.1
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.13.1
+  intl: ^0.17.0
 
 
 
@@ -102,6 +106,7 @@ flutter:
     - assets/images/user2.png
     - assets/images/nike-shoes.png
     - assets/images/romario.jpg
+    - assets/images/sammy-line-travel-backpack-with-passport-and-air-ticket.gif
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

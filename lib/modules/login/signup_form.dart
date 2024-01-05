@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/components/signup/terms_checkbox.dart';
 import 'package:futrent_mobile/modules/login/controller/signup_form_contoller.dart';
-import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/validator.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -95,70 +94,44 @@ class SignUpForm extends StatelessWidget {
                 labelText: 'Email', prefixIcon: Icon(Iconsax.direct)),
           ),
           const SizedBox(height: 14),
-          TextFormField(
-            controller: controller.password,
-            validator: (value) => Validator.validatePassword(value),
-            expands: false,
-            decoration: const InputDecoration(
-                labelText: 'Senha', prefixIcon: Icon(Iconsax.password_check)),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => Validator.validatePassword(value),
+              expands: false,
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: 'Senha',
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.value =
+                        !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye)),
+              ),
+            ),
           ),
           const SizedBox(height: 14),
-          TextFormField(
-            controller: controller.confirmPassword,
-            validator: (value) => Validator.validatePassword(value),
-            expands: false,
-            decoration: const InputDecoration(
-                labelText: 'Confirmação de Senha',
-                prefixIcon: Icon(Iconsax.password_check)),
+          Obx(
+            () => TextFormField(
+              controller: controller.confirmPassword,
+              validator: (value) => Validator.validatePassword(value),
+              expands: false,
+              obscureText: controller.hideConfirmPassword.value,
+              decoration: InputDecoration(
+                  labelText: 'Confirmação de Senha',
+                  suffixIcon: IconButton(
+                      onPressed: () => controller.hideConfirmPassword.value =
+                          !controller.hideConfirmPassword.value,
+                      icon: Icon(controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye)),
+                  prefixIcon: const Icon(Iconsax.password_check)),
+            ),
           ),
           const SizedBox(height: 14),
-          Row(
-            children: [
-              SizedBox(
-                width: 24,
-                height: 24,
-                child: Checkbox(value: true, onChanged: (value) {}),
-              ),
-              const SizedBox(height: 14),
-              Text.rich(
-                TextSpan(
-                    text: 'Concordo com a ',
-                    style: Theme.of(context).textTheme.labelSmall),
-              ),
-              Text.rich(
-                TextSpan(
-                  text: 'Política de privacidade',
-                  style: Theme.of(context).textTheme.labelSmall!.apply(
-                        color: DeviceUtility.isDarkMode(context)
-                            ? white
-                            : darkGreen,
-                        decoration: TextDecoration.underline,
-                        decorationColor: DeviceUtility.isDarkMode(context)
-                            ? white
-                            : darkGreen,
-                      ),
-                ),
-              ),
-              Text.rich(
-                TextSpan(
-                    text: ' e ', style: Theme.of(context).textTheme.labelSmall),
-              ),
-              Text.rich(
-                TextSpan(
-                  text: 'termos de uso',
-                  style: Theme.of(context).textTheme.labelSmall!.apply(
-                        color: DeviceUtility.isDarkMode(context)
-                            ? white
-                            : darkGreen,
-                        decoration: TextDecoration.underline,
-                        decorationColor: DeviceUtility.isDarkMode(context)
-                            ? white
-                            : darkGreen,
-                      ),
-                ),
-              ),
-            ],
-          ),
+          const TermosPoliticaCheckBox(),
           const SizedBox(height: 14),
           SizedBox(
             width: double.infinity,

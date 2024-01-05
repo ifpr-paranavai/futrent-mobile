@@ -1,7 +1,7 @@
 class Validator {
   static String? validateEmptyText(String? fieldName, String? value) {
     if (value == null || value.isEmpty) {
-      return '$fieldName is required';
+      return 'Preencha  o campo $fieldName';
     }
 
     return null;
@@ -9,13 +9,13 @@ class Validator {
 
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Email is required';
+      return 'Preencha o email';
     }
 
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
     if (!emailRegExp.hasMatch(value)) {
-      return 'Invalid email address';
+      return 'Email inválido';
     }
 
     return null;
@@ -23,24 +23,24 @@ class Validator {
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Password is required';
+      return 'Preencha sua senha';
     }
 
     if (value.length < 6) {
-      return 'Password must be at least 6 characters';
+      return 'A senha deve ter no minimo 6 caractéres';
     }
 
     //Check for uppercase letters
     if (!value.contains(RegExp(r'[A-Z]'))) {
-      return 'Password must contain at least one uppercase letter';
+      return 'Senha deve ter pelo menos uma letra maiúscula';
     }
 
     if (!value.contains(RegExp(r'[0-9]'))) {
-      return 'Password must contain at least one number';
+      return 'Senha deve ter pelo menos um número';
     }
 
     if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-      return 'Password must contain at least one special character';
+      return 'Senha deve ter pelo menos um caractére especial';
     }
 
     return null;
@@ -48,13 +48,13 @@ class Validator {
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Phone number is required';
+      return 'Preencha o telefone';
     }
 
     final phoneRegExp = RegExp(r'^\+?0[0-9]{10}$');
 
     if (!phoneRegExp.hasMatch(value)) {
-      return 'Invalid phone number';
+      return 'Telefone inválido';
     }
 
     return null;
