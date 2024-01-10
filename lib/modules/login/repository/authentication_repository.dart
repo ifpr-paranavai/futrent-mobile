@@ -1,7 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:futrent_mobile/components/common/bottom-bar-menu.dart';
 import 'package:futrent_mobile/modules/login/login_page.dart';
+import 'package:futrent_mobile/pages/home/home_page.dart';
+import 'package:futrent_mobile/pages/home_page.dart';
 import 'package:futrent_mobile/pages/onboarding/onboarding_page.dart';
+import 'package:futrent_mobile/pages/signup/verify_email.dart';
+import 'package:futrent_mobile/utils/exceptions/firebase_auth_exceptions.dart';
+import 'package:futrent_mobile/utils/exceptions/firebase_exceptions.dart';
+import 'package:futrent_mobile/utils/exceptions/format_exceptions.dart';
+import 'package:futrent_mobile/utils/exceptions/platform_exceptions.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -19,12 +28,23 @@ class AuthenticationRepository extends GetxController {
 
   // Function to show relevant screen
   screenRedirect() async {
-    // LOCAL STORAGE
-    deviceStorage.writeIfNull('isFirstTime', true);
+    final user = _auth.currentUser;
+    if (user != null) {
+      if (user.emailVerified) {
+        Get.offAll(() => const HomePage2());
+      } else {
+        Get.offAll(() => VerifyEmailPage(
+              email: _auth.currentUser?.email,
+            ));
+      }
+    } else {
+      // LOCAL STORAGE
+      deviceStorage.writeIfNull('isFirstTime', true);
 
-    deviceStorage.read('isFirstTime') != true
-        ? Get.offAll(() => const LoginPage())
-        : Get.offAll(() => const OnBoardingScreen());
+      deviceStorage.read('isFirstTime') != true
+          ? Get.offAll(() => const LoginPage())
+          : Get.offAll(() => const OnBoardingScreen());
+    }
   }
 
   /* ----------------- Email & Password sign-in ----------------- */
@@ -35,19 +55,36 @@ class AuthenticationRepository extends GetxController {
     try {
       return await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      /*} on FirebaseAuthException catch (e) {
-      
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      
+      throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      
-    } on PlatformException catch (e) {*/
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
     } catch (e) {
       throw 'Algo deu errado ao criar sua conta. Tente novamente mais tarde.';
     }
   }
 
   /// [EmailAuthentication] - Mail verification
+  Future<void> sendEmailVerification() async {
+    try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Algo deu errado ao criar sua conta. Tente novamente mais tarde.';
+    }
+  }
+
   /// [EmailAuthentication] - ReAuthenticate user
   /// [EmailAuthentication] - Forget Password
   /* ----------------- Federated identity & social sign-in ----------------- */
@@ -56,5 +93,22 @@ class AuthenticationRepository extends GetxController {
 
   /* ----------------- ./Federated identity & social sign-in ----------------- */
   /// [logoutUser] - Valid for any authentication
+  Future<void> logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(() => const LoginPage());
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Algo deu errado ao criar sua conta. Tente novamente mais tarde.';
+    }
+  }
+
   /// [DeleteUser] - Remove user Auth and Firebase account
 }

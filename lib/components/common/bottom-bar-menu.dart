@@ -7,59 +7,62 @@ import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class BottomPrimaryBar extends StatelessWidget {
-  const BottomPrimaryBar({super.key});
+class NavigationMenu extends StatelessWidget {
+  const NavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     final dark = DeviceUtility.isDarkMode(context);
 
-    return Obx(
-      () => NavigationBar(
-        height: 80,
-        elevation: 0,
-        backgroundColor: dark ? lightBlack : white,
-        selectedIndex: controller.selectedIndex.value,
-        onDestinationSelected: (index) =>
-            controller.selectedIndex.value = index,
-        destinations: [
-          NavigationDestination(
+    return Scaffold(
+      bottomNavigationBar: Obx(
+        () => NavigationBar(
+          height: 80,
+          elevation: 0,
+          backgroundColor: dark ? lightBlack : white,
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (index) =>
+              controller.selectedIndex.value = index,
+          destinations: [
+            NavigationDestination(
+                icon: Icon(
+                  Iconsax.calendar,
+                  color: dark ? white : lightBlack,
+                ),
+                label: 'Agenda'),
+            NavigationDestination(
               icon: Icon(
-                Iconsax.calendar,
+                Iconsax.play_circle,
                 color: dark ? white : lightBlack,
               ),
-              label: 'Agenda'),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.play_circle,
-              color: dark ? white : lightBlack,
+              label: 'Jogar',
             ),
-            label: 'Jogar',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.home,
-              color: dark ? white : lightBlack,
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.home,
+                color: dark ? white : lightBlack,
+              ),
+              label: 'Menu',
             ),
-            label: 'Menu',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.message,
-              color: dark ? white : lightBlack,
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.message,
+                color: dark ? white : lightBlack,
+              ),
+              label: 'Conversas',
             ),
-            label: 'Conversas',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.user,
-              color: dark ? white : lightBlack,
+            NavigationDestination(
+              icon: Icon(
+                Iconsax.user,
+                color: dark ? white : lightBlack,
+              ),
+              label: 'Perfil',
             ),
-            label: 'Perfil',
-          ),
-        ],
+          ],
+        ),
       ),
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }
