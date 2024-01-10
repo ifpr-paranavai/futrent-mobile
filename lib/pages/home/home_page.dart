@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/grid/grid_layout.dart';
-import 'package:futrent_mobile/components/icons/home-categories.dart';
+import 'package:futrent_mobile/components/icons/home_categories.dart';
 import 'package:futrent_mobile/components/containers/primary_app_bar_container.dart';
 import 'package:futrent_mobile/components/containers/primary_header_container.dart';
 import 'package:futrent_mobile/components/search%20bar/primary_search_bar.dart';

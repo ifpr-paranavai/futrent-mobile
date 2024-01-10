@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:futrent_mobile/components/common/bottom-bar-menu.dart';
 import 'package:futrent_mobile/modules/login/login_page.dart';
-import 'package:futrent_mobile/pages/home/home_page.dart';
-import 'package:futrent_mobile/pages/home_page.dart';
+import 'package:futrent_mobile/pages/home_navigation.dart';
 import 'package:futrent_mobile/pages/onboarding/onboarding_page.dart';
 import 'package:futrent_mobile/pages/signup/verify_email.dart';
 import 'package:futrent_mobile/utils/exceptions/firebase_auth_exceptions.dart';
@@ -31,7 +29,7 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
-        Get.offAll(() => const HomePage2());
+        Get.offAll(() => const HomeNavigation());
       } else {
         Get.offAll(() => VerifyEmailPage(
               email: _auth.currentUser?.email,

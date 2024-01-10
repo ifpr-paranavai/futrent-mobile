@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/common/bottom-bar-menu.dart';
+import 'package:futrent_mobile/components/common/navigation_menu.dart';
 import 'package:get/get.dart';
 
-class HomePage2 extends StatefulWidget {
-  const HomePage2({super.key});
+class HomeNavigation extends StatefulWidget {
+  const HomeNavigation({super.key});
 
   @override
-  State<HomePage2> createState() => _HomePage2State();
+  State<HomeNavigation> createState() => _HomeNavigationState();
 }
 
-class _HomePage2State extends State<HomePage2> {
+class _HomeNavigationState extends State<HomeNavigation> {
   NavigationController navigationController = Get.put(NavigationController());
 
   @override
