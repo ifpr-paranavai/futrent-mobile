@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/circular_container.dart';
-import 'package:futrent_mobile/components/images/rounded-image.dart';
+import 'package:futrent_mobile/components/images/rounded_image.dart';
 import 'package:futrent_mobile/pages/home/home_controller.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:get/get.dart';

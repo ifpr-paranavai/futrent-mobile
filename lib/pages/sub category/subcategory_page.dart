@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/components/images/rounded-image.dart';
+import 'package:futrent_mobile/components/images/rounded_image.dart';
 import 'package:futrent_mobile/components/app%20bar/primary_app_bar.dart';
 import 'package:futrent_mobile/components/cards/estabilishment_card_horizontal.dart';
 import 'package:futrent_mobile/components/common/section_heading.dart';

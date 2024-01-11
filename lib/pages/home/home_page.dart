@@ -25,6 +25,7 @@ class HomePage extends StatelessWidget {
             PrimaryHeaderContainer(
               child: Column(
                 children: [
+                  const SizedBox(height: 32),
                   const AppBarPrimaryContainer(),
                   const SizedBox(height: 32),
                   const PrimarySearchBar(

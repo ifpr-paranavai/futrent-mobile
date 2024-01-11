@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/containers/rounded_container.dart';
-import 'package:futrent_mobile/components/images/rounded-image.dart';
+import 'package:futrent_mobile/components/images/rounded_image.dart';
 import 'package:futrent_mobile/components/cards/sport_card.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';

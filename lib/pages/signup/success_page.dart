@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futrent_mobile/styles/spacingStyle.dart';
+import 'package:futrent_mobile/styles/spacing_style.dart';
 import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 
