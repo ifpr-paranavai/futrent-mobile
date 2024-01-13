@@ -4,7 +4,6 @@ import 'package:futrent_mobile/components/icons/social_media_icons.dart';
 import 'package:futrent_mobile/pages/forgot_password.dart';
 import 'package:futrent_mobile/pages/home_navigation.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
-import 'package:futrent_mobile/utils/sizes.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/primary_input.dart';

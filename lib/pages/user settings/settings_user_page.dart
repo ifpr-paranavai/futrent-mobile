@@ -101,6 +101,18 @@ class SettingsUserPage extends StatelessWidget {
                         'Personalizar sua localização para encontrar jogos',
                     trailing: Switch(value: true, onChanged: (value) {}),
                   ),
+
+                  ///--Logout Button
+                  const SizedBox(height: Sizes.spaceBtwSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Text('Sair da Conta'),
+                    ),
+                  ),
+
+                  const SizedBox(height: Sizes.spaceBtwSections * 2.5),
                 ],
               ),
             )
