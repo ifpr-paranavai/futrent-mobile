@@ -1,9 +1,13 @@
+import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/signup/terms_checkbox.dart';
 import 'package:futrent_mobile/modules/login/controller/signup_form_contoller.dart';
+import 'package:futrent_mobile/styles/colors.dart';
+import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/validator.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({
@@ -13,6 +17,8 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
+    final maskPhone = MaskTextInputFormatter(mask: '(##) #####-####');
+
     return Form(
       key: controller.signupFormKey,
       child: Column(
@@ -22,22 +28,18 @@ class SignUpForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.name,
-                  validator: (value) =>
-                      Validator.validateEmptyText('Nome', value),
+                  validator: (value) => Validator.validateEmptyText('Nome', value),
                   expands: false,
-                  decoration: const InputDecoration(
-                      labelText: 'Nome', prefixIcon: Icon(Iconsax.user)),
+                  decoration: const InputDecoration(labelText: 'Nome', prefixIcon: Icon(Iconsax.user)),
                 ),
               ),
               const SizedBox(width: 14),
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
-                  validator: (value) =>
-                      Validator.validateEmptyText('Sobrenome', value),
+                  validator: (value) => Validator.validateEmptyText('Sobrenome', value),
                   expands: false,
-                  decoration: const InputDecoration(
-                      labelText: 'Sobrenome', prefixIcon: Icon(Iconsax.user)),
+                  decoration: const InputDecoration(labelText: 'Sobrenome', prefixIcon: Icon(Iconsax.user)),
                 ),
               ),
             ],
@@ -45,18 +47,30 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(height: 14),
           TextFormField(
             controller: controller.phone,
+            inputFormatters: [maskPhone],
             validator: (value) => Validator.validatePhoneNumber(value),
             expands: false,
-            decoration: const InputDecoration(
-                labelText: 'Telefone', prefixIcon: Icon(Iconsax.mobile)),
+            decoration: const InputDecoration(labelText: 'Telefone', prefixIcon: Icon(Iconsax.mobile)),
           ),
           const SizedBox(height: 14),
-          TextFormField(
-            controller: controller.city,
-            validator: (value) => Validator.validateEmptyText('Cidade', value),
-            expands: false,
-            decoration: const InputDecoration(
-                labelText: 'Cidade', prefixIcon: Icon(Iconsax.gps)),
+          // TextFormField(
+          //   controller: controller.city,
+          //   validator: (value) => Validator.validateEmptyText('Cidade', value),
+          //   expands: false,
+          //   decoration: const InputDecoration(labelText: 'Cidade', prefixIcon: Icon(Iconsax.gps)),
+          // ),
+          CSCPicker(
+            layout: Layout.vertical,
+            onCountryChanged: (country) {},
+            onStateChanged: (country) {},
+            onCityChanged: (value) {},
+            dropdownHeadingStyle: Theme.of(context).textTheme.titleLarge,
+            defaultCountry: CscCountry.Brazil,
+            dropdownDialogRadius: 1,
+            countryDropdownLabel: 'País',
+            stateDropdownLabel: 'Estado',
+            cityDropdownLabel: 'Cidade',
+            dropdownDecoration: BoxDecoration(border: Border.all(color: black, width: 1.0), borderRadius: BorderRadius.circular(14)),
           ),
           const SizedBox(height: 14),
           Row(
@@ -64,23 +78,18 @@ class SignUpForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.address,
-                  validator: (value) =>
-                      Validator.validateEmptyText('Endereço', value),
+                  validator: (value) => Validator.validateEmptyText('Endereço', value),
                   expands: false,
-                  decoration: const InputDecoration(
-                      labelText: 'Endereço',
-                      prefixIcon: Icon(Iconsax.location)),
+                  decoration: const InputDecoration(labelText: 'Endereço', prefixIcon: Icon(Iconsax.location)),
                 ),
               ),
               const SizedBox(width: 14),
               Expanded(
                 child: TextFormField(
-                  validator: (value) =>
-                      Validator.validateEmptyText('Número Residencial', value),
+                  validator: (value) => Validator.validateEmptyText('Número Residencial', value),
                   controller: controller.numberAddress,
                   expands: false,
-                  decoration: const InputDecoration(
-                      labelText: 'Número', prefixIcon: Icon(Iconsax.location)),
+                  decoration: const InputDecoration(labelText: 'Número', prefixIcon: Icon(Iconsax.location)),
                 ),
               ),
             ],
@@ -90,8 +99,7 @@ class SignUpForm extends StatelessWidget {
             controller: controller.email,
             validator: (value) => Validator.validateEmail(value),
             expands: false,
-            decoration: const InputDecoration(
-                labelText: 'Email', prefixIcon: Icon(Iconsax.direct)),
+            decoration: const InputDecoration(labelText: 'Email', prefixIcon: Icon(Iconsax.direct)),
           ),
           const SizedBox(height: 14),
           Obx(
@@ -103,12 +111,7 @@ class SignUpForm extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: 'Senha',
                 prefixIcon: const Icon(Iconsax.password_check),
-                suffixIcon: IconButton(
-                    onPressed: () => controller.hidePassword.value =
-                        !controller.hidePassword.value,
-                    icon: Icon(controller.hidePassword.value
-                        ? Iconsax.eye_slash
-                        : Iconsax.eye)),
+                suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
               ),
             ),
           ),
@@ -119,15 +122,7 @@ class SignUpForm extends StatelessWidget {
               validator: (value) => Validator.validatePassword(value),
               expands: false,
               obscureText: controller.hideConfirmPassword.value,
-              decoration: InputDecoration(
-                  labelText: 'Confirmação de Senha',
-                  suffixIcon: IconButton(
-                      onPressed: () => controller.hideConfirmPassword.value =
-                          !controller.hideConfirmPassword.value,
-                      icon: Icon(controller.hideConfirmPassword.value
-                          ? Iconsax.eye_slash
-                          : Iconsax.eye)),
-                  prefixIcon: const Icon(Iconsax.password_check)),
+              decoration: InputDecoration(labelText: 'Confirmação de Senha', suffixIcon: IconButton(onPressed: () => controller.hideConfirmPassword.value = !controller.hideConfirmPassword.value, icon: Icon(controller.hideConfirmPassword.value ? Iconsax.eye_slash : Iconsax.eye)), prefixIcon: const Icon(Iconsax.password_check)),
             ),
           ),
           const SizedBox(height: 14),

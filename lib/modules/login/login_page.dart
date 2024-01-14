@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/common/divider_social_media.dart';
 import 'package:futrent_mobile/components/icons/social_media_icons.dart';
+import 'package:futrent_mobile/modules/login/controller/login_controller.dart';
 import 'package:futrent_mobile/pages/forgot_password.dart';
-import 'package:futrent_mobile/pages/home_navigation.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
+import 'package:futrent_mobile/utils/validator.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../styles/colors.dart';
 import '../../styles/primary_input.dart';
@@ -16,12 +19,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _userController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: controller.loginFormKey,
       child: Stack(
         children: [
           Container(
@@ -43,12 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(top: 60.0),
                       child: Text(
                         'FUTRENT',
-                        style: TextStyle(
-                            letterSpacing: 1.5,
-                            fontSize: 70.0,
-                            fontWeight: FontWeight.bold,
-                            color: yellow,
-                            fontFamily: 'Rubik'),
+                        style: TextStyle(letterSpacing: 1.5, fontSize: 70.0, fontWeight: FontWeight.bold, color: yellow, fontFamily: 'Rubik'),
                       ),
                     ),
                     const Text(
@@ -61,8 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                       textAlign: TextAlign.center,
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.fromLTRB(30.0, 120.0, 30.0, 5.0),
+                      padding: const EdgeInsets.fromLTRB(30.0, 120.0, 30.0, 5.0),
                       child: PrimaryTextField(
                         borderColor: yellow,
                         fillColor: darkGreen,
@@ -72,31 +69,35 @@ class _LoginPageState extends State<LoginPage> {
                         labelTextColor: yellow,
                         hintText: 'Email ou nome de usuário',
                         labelText: 'Usuário',
-                        obscureText: true,
-                        controller: _userController,
+                        obscureText: false,
+                        controller: controller.email,
+                        validator: (value) => Validator.validateEmail(value),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 0.0),
-                      child: PrimaryTextField(
-                        borderColor: yellow,
-                        fillColor: darkGreen,
-                        focusColor: lightGreen,
-                        prefixIconColor: yellow,
-                        hintTextColor: yellow,
-                        labelTextColor: yellow,
-                        hintText: 'Senha',
-                        labelText: 'Senha',
-                        obscureText: true,
-                        controller: _passwordController,
+                      child: Obx(
+                        () => PrimaryTextField(
+                          borderColor: yellow,
+                          fillColor: darkGreen,
+                          focusColor: lightGreen,
+                          prefixIconColor: yellow,
+                          hintTextColor: yellow,
+                          labelTextColor: yellow,
+                          hintText: 'Senha',
+                          labelText: 'Senha',
+                          obscureText: controller.hidePassword.value,
+                          controller: controller.password,
+                          validator: (value) => Validator.validatePassword('Senha'),
+                          suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
+                        ),
                       ),
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const ForgotPasswordPage(),
+                            builder: (BuildContext context) => const ForgotPasswordPage(),
                           ),
                         );
                       },
@@ -109,46 +110,33 @@ class _LoginPageState extends State<LoginPage> {
                               padding: const EdgeInsets.only(right: 15.0),
                               child: Row(
                                 children: [
-                                  Checkbox(value: true, onChanged: (value) {}),
+                                  Obx(
+                                    () => Checkbox(
+                                      value: controller.rememberMe.value,
+                                      onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value,
+                                    ),
+                                  ),
                                   Text(
                                     'LEMBRAR-SE',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge!
-                                        .apply(color: white),
+                                    style: Theme.of(context).textTheme.bodyLarge!.apply(color: white),
                                   ),
                                 ],
                               ),
                             ),
-                            Text('ESQUECEU SUA SENHA?',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .apply(color: white)),
+                            Text('ESQUECEU SUA SENHA?', style: Theme.of(context).textTheme.bodyLarge!.apply(color: white)),
                           ],
                         ),
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(right: 30, left: 30, top: 40),
+                      padding: const EdgeInsets.only(right: 30, left: 30, top: 40),
                       child: SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const HomeNavigation(),
-                              ),
-                            );
-                          },
+                          onPressed: () => controller.emailAndPasswordSignIn(),
                           child: Text(
                             'ENTRAR',
-                            style: TextStyle(
-                                fontSize: 21.0,
-                                fontWeight: FontWeight.w900,
-                                color: darkGreen),
+                            style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.w900, color: darkGreen),
                           ),
                         ),
                       ),
@@ -179,8 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                             onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const RegisterPage(),
+                                  builder: (BuildContext context) => const RegisterPage(),
                                 ),
                               );
                             },

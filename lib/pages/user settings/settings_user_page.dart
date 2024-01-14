@@ -6,6 +6,7 @@ import 'package:futrent_mobile/components/common/section_heading.dart';
 import 'package:futrent_mobile/components/tile/settings_menu_tile.dart';
 import 'package:futrent_mobile/components/tile/user_profile_tile.dart';
 import 'package:futrent_mobile/pages/profile/profile_page.dart';
+import 'package:futrent_mobile/pages/user%20settings/controller/setting_user_controller.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 import 'package:futrent_mobile/utils/sizes.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,8 @@ class SettingsUserPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SettingUserController());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -28,10 +31,7 @@ class SettingsUserPage extends StatelessWidget {
                   AppBarPrimary(
                       title: Text(
                     'Conta',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineMedium!
-                        .apply(color: white),
+                    style: Theme.of(context).textTheme.headlineMedium!.apply(color: white),
                   )),
 
                   ///-- User Profile Card
@@ -97,8 +97,7 @@ class SettingsUserPage extends StatelessWidget {
                   SettingsMenuTile(
                     icon: Iconsax.location,
                     title: 'Geolocalização',
-                    subtitle:
-                        'Personalizar sua localização para encontrar jogos',
+                    subtitle: 'Personalizar sua localização para encontrar jogos',
                     trailing: Switch(value: true, onChanged: (value) {}),
                   ),
 
@@ -107,7 +106,7 @@ class SettingsUserPage extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () => controller.signout(),
                       child: const Text('Sair da Conta'),
                     ),
                   ),

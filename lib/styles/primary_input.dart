@@ -12,8 +12,11 @@ class PrimaryTextField extends StatelessWidget {
   final TextEditingController controller;
   final Icon? icon;
   final Color prefixIconColor;
+  final String? Function(String?)? validator;
+  final IconButton? suffixIcon;
 
-  const PrimaryTextField({super.key, 
+  const PrimaryTextField({
+    super.key,
     required this.obscureText,
     required this.hintText,
     required this.labelText,
@@ -25,14 +28,18 @@ class PrimaryTextField extends StatelessWidget {
     required this.controller,
     this.icon,
     required this.prefixIconColor,
+    this.validator,
+    this.suffixIcon,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       obscureText: obscureText,
       controller: controller,
+      validator: validator,
       decoration: InputDecoration(
+        suffixIcon: suffixIcon,
         prefixIcon: icon,
         prefixIconColor: prefixIconColor,
         fillColor: fillColor,
