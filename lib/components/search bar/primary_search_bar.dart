@@ -40,13 +40,11 @@ class PrimarySearchBar extends StatelessWidget {
                     : white
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(16.0),
-            border: showBorder
-                ? Border.all(color: dark ? white : lightBlack.withOpacity(0.4))
-                : null,
+            border: showBorder ? Border.all(color: dark ? white : lightBlack.withOpacity(0.4)) : null,
           ),
           child: Row(
             children: [
-              Icon(icon, color: orange),
+              Icon(icon, color: babyBlue),
               const SizedBox(width: 8),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],

@@ -25,23 +25,17 @@ class ProductMetaData extends StatelessWidget {
 
             RoundedContainer(
               radius: Sizes.sm,
-              backgroundColor: orange,
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Sizes.sm, vertical: Sizes.xs),
+              backgroundColor: babyBlue,
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.sm, vertical: Sizes.xs),
               child: Text(
                 '25%',
-                style:
-                    Theme.of(context).textTheme.labelLarge!.apply(color: white),
+                style: Theme.of(context).textTheme.labelLarge!.apply(color: white),
               ),
             ),
             const SizedBox(width: Sizes.spaceBtwItems),
 
             /// - Price
-            Text('R\$ 100',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall!
-                    .apply(decoration: TextDecoration.lineThrough)),
+            Text('R\$ 100', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
             const SizedBox(width: Sizes.spaceBtwItems),
             const ProductPriceText(
               price: '90',

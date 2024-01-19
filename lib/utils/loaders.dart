@@ -5,8 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class Loaders {
-  static hideSnackBar() =>
-      ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
+  static hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
   static customToast({required message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
@@ -19,9 +18,7 @@ class Loaders {
           margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: DeviceUtility.isDarkMode(Get.context!)
-                ? darkGrey.withOpacity(0.9)
-                : lightGrey.withOpacity(0.9),
+            color: DeviceUtility.isDarkMode(Get.context!) ? darkGrey.withOpacity(0.9) : lightGrey.withOpacity(0.9),
           ),
         ),
       ),
@@ -35,7 +32,7 @@ class Loaders {
       isDismissible: true,
       shouldIconPulse: true,
       colorText: white,
-      backgroundColor: orange,
+      backgroundColor: babyBlue,
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),

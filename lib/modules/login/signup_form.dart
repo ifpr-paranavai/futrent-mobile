@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/signup/terms_checkbox.dart';
 import 'package:futrent_mobile/modules/login/controller/signup_form_contoller.dart';
 import 'package:futrent_mobile/styles/colors.dart';
-import 'package:futrent_mobile/utils/device_utility.dart';
 import 'package:futrent_mobile/utils/validator.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

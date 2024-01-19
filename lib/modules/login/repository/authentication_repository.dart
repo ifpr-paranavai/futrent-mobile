@@ -11,6 +11,7 @@ import 'package:futrent_mobile/utils/exceptions/format_exceptions.dart';
 import 'package:futrent_mobile/utils/exceptions/platform_exceptions.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -40,19 +41,15 @@ class AuthenticationRepository extends GetxController {
       // LOCAL STORAGE
       deviceStorage.writeIfNull('isFirstTime', true);
 
-      deviceStorage.read('isFirstTime') != true
-          ? Get.offAll(() => const LoginPage())
-          : Get.offAll(() => const OnBoardingScreen());
+      deviceStorage.read('isFirstTime') != true ? Get.offAll(() => const LoginPage()) : Get.offAll(() => const OnBoardingScreen());
     }
   }
 
   /* ----------------- Email & Password sign-in ----------------- */
   /// [EmailAuthentication] - Login
-  Future<UserCredential> loginWithEmailAndPassword(
-      String email, String password) async {
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
     try {
-      return await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -67,11 +64,9 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [EmailAuthentication] - Register
-  Future<UserCredential> registerWithEmailAndPassword(
-      String email, String password) async {
+  Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
-      return await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -106,6 +101,30 @@ class AuthenticationRepository extends GetxController {
   /// [EmailAuthentication] - Forget Password
   /* ----------------- Federated identity & social sign-in ----------------- */
   /// [GoogleAuthentication] - GOOGLE SIGN IN
+  Future<UserCredential> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+      return await _auth.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Algo deu errado ao criar sua conta. Tente novamente mais tarde.';
+    }
+  }
+
   /// [FacebookAuthentication] - FACEBOOK SIGN IN
 
   /* ----------------- ./Federated identity & social sign-in ----------------- */

@@ -23,8 +23,7 @@ class PromoSlider extends StatelessWidget {
         CarouselSlider(
             options: CarouselOptions(
               viewportFraction: 1,
-              onPageChanged: (index, _) =>
-                  controller.updatePageIndicator(index),
+              onPageChanged: (index, _) => controller.updatePageIndicator(index),
             ),
             items: banners.map((url) => RoundedImage(imageUrl: url)).toList()),
         const SizedBox(height: 16),
@@ -38,9 +37,7 @@ class PromoSlider extends StatelessWidget {
                     width: 20,
                     height: 4,
                     margin: const EdgeInsets.only(right: 10),
-                    backgroundColor: controller.carouselController.value == i
-                        ? orange
-                        : Colors.grey,
+                    backgroundColor: controller.carouselController.value == i ? babyBlue : Colors.grey,
                   ),
               ],
             ),

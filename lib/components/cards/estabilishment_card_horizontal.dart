@@ -45,15 +45,11 @@ class ProductCardHorizontal extends StatelessWidget {
                   top: 6,
                   child: RoundedContainer(
                     radius: Sizes.sm,
-                    backgroundColor: orange,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: Sizes.sm, vertical: Sizes.xs),
+                    backgroundColor: babyBlue,
+                    padding: const EdgeInsets.symmetric(horizontal: Sizes.sm, vertical: Sizes.xs),
                     child: Text(
                       '25%',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .apply(color: white),
+                      style: Theme.of(context).textTheme.labelLarge!.apply(color: white),
                     ),
                   ),
                 ),
@@ -93,17 +89,11 @@ class ProductCardHorizontal extends StatelessWidget {
 
                         /// -- Add  to cart
                         Container(
-                          decoration: BoxDecoration(
-                              color: black,
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(Sizes.cardRadiusMd),
-                                  bottomRight: Radius.circular(
-                                      Sizes.productImageRadius))),
+                          decoration: BoxDecoration(color: black, borderRadius: const BorderRadius.only(topLeft: Radius.circular(Sizes.cardRadiusMd), bottomRight: Radius.circular(Sizes.productImageRadius))),
                           child: SizedBox(
                             width: Sizes.iconLg * 1.2,
                             height: Sizes.iconLg * 1.2,
-                            child:
-                                Center(child: Icon(Iconsax.add, color: white)),
+                            child: Center(child: Icon(Iconsax.add, color: white)),
                           ),
                         )
                       ],

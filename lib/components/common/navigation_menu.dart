@@ -22,8 +22,7 @@ class NavigationMenu extends StatelessWidget {
           elevation: 0,
           backgroundColor: dark ? lightBlack : white,
           selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) =>
-              controller.selectedIndex.value = index,
+          onDestinationSelected: (index) => controller.selectedIndex.value = index,
           destinations: [
             NavigationDestination(
                 icon: Icon(

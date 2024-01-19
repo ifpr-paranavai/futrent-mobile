@@ -27,7 +27,7 @@ class ProductCardVertical extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [CustomShadowStyle.verticalProductsShadow],
           borderRadius: BorderRadius.circular(Sizes.productImageRadius),
-          color: dark ? darkGrey : white,
+          color: dark ? darkLightGreen : white,
         ),
         child: Column(
           children: [
@@ -43,15 +43,11 @@ class ProductCardVertical extends StatelessWidget {
                   top: 6,
                   child: RoundedContainer(
                     radius: Sizes.sm,
-                    backgroundColor: orange,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: Sizes.sm, vertical: Sizes.xs),
+                    backgroundColor: babyBlue,
+                    padding: const EdgeInsets.symmetric(horizontal: Sizes.sm, vertical: Sizes.xs),
                     child: Text(
                       '25%',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .apply(color: white),
+                      style: Theme.of(context).textTheme.labelLarge!.apply(color: white),
                     ),
                   ),
                 ),
@@ -92,12 +88,7 @@ class ProductCardVertical extends StatelessWidget {
 
                 /// -- ADD TO CART BUTTON
                 Container(
-                  decoration: BoxDecoration(
-                      color: black,
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(Sizes.cardRadiusMd),
-                          bottomRight:
-                              Radius.circular(Sizes.productImageRadius))),
+                  decoration: BoxDecoration(color: dark ? lightBlack : lightGreen, borderRadius: const BorderRadius.only(topLeft: Radius.circular(Sizes.cardRadiusMd), bottomRight: Radius.circular(Sizes.productImageRadius))),
                   child: SizedBox(
                     width: Sizes.iconLg * 1.2,
                     height: Sizes.iconLg * 1.2,

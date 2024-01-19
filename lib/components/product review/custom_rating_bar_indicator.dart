@@ -13,9 +13,6 @@ class CustomRatingBarIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RatingBarIndicator(
-        rating: rating,
-        itemSize: 20,
-        itemBuilder: (_, __) => Icon(Iconsax.star1, color: orange));
+    return RatingBarIndicator(rating: rating, itemSize: 20, itemBuilder: (_, __) => Icon(Iconsax.star1, color: babyBlue));
   }
 }

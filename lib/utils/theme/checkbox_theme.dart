@@ -20,7 +20,7 @@ class CustomCheckBoxTheme {
     fillColor: MaterialStateProperty.resolveWith(
       (states) {
         if (states.contains(MaterialState.selected)) {
-          return darkGreen;
+          return lightGreen;
         } else {
           return Colors.transparent;
         }
@@ -44,7 +44,7 @@ class CustomCheckBoxTheme {
     fillColor: MaterialStateProperty.resolveWith(
       (states) {
         if (states.contains(MaterialState.selected)) {
-          return darkGreen;
+          return lightGreen;
         } else {
           return Colors.transparent;
         }

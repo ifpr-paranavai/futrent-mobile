@@ -29,8 +29,7 @@ class SignUpController extends GetxController {
   void signUp() async {
     try {
       //Start Loading
-      FullScreenLoader.openLoadingDialog(
-          'Estamos processando sua informação', TImages.docerAnimation);
+      FullScreenLoader.openLoadingDialog('Estamos processando sua informação', TImages.docerAnimation);
 
       //Check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -47,17 +46,12 @@ class SignUpController extends GetxController {
 
       //Privacy Policy Agreement
       if (!acceptTerms.value) {
-        Loaders.warningSnackBar(
-            title: 'Aceite os termos de privacidade',
-            message:
-                'Para prosseguir precisamos que voce aceite os termos de privacidade');
+        Loaders.warningSnackBar(title: 'Aceite os termos de privacidade', message: 'Para prosseguir precisamos que voce aceite os termos de privacidade');
         return;
       }
 
       //Register user in the Firebase Authentication & store user data in the Firebase
-      final userCredential = await AuthenticationRepository.instance
-          .registerWithEmailAndPassword(
-              email.text.trim(), password.text.trim());
+      final userCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       //Save Authenticatade user in Firebase Firestore
       final newUser = UserModel(
@@ -67,6 +61,7 @@ class SignUpController extends GetxController {
         email: email.text.trim(),
         phoneNumber: phone.text.trim(),
         profilePicture: '',
+        username: '',
       );
 
       final userRepository = Get.put(UserRepository());
@@ -75,8 +70,7 @@ class SignUpController extends GetxController {
       FullScreenLoader.stopLoading();
 
       //Show success message
-      Loaders.successSnackBar(
-          title: 'Parabéns', message: 'Seu cadastro foi concluído');
+      Loaders.successSnackBar(title: 'Parabéns', message: 'Seu cadastro foi concluído');
 
       //move to verify email screen
       Get.to(() => VerifyEmailPage(
@@ -85,8 +79,7 @@ class SignUpController extends GetxController {
     } catch (e) {
       FullScreenLoader.stopLoading();
 
-      Loaders.errorSnackBar(
-          title: 'Opa, algo deu errado', message: e.toString());
+      Loaders.errorSnackBar(title: 'Opa, algo deu errado', message: e.toString());
     }
   }
 }

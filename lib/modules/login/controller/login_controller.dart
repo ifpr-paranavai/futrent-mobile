@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/modules/login/controller/user_controller.dart';
 import 'package:futrent_mobile/modules/login/repository/authentication_repository.dart';
 import 'package:futrent_mobile/utils/full_screen_loader.dart';
 import 'package:futrent_mobile/utils/helpers/network_manager.dart';
@@ -14,6 +15,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -49,6 +51,35 @@ class LoginController extends GetxController {
 
       //Login
       final userCredentials = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+
+      FullScreenLoader.stopLoading();
+
+      //Redirect
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      FullScreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: 'Opa, algo deu errado', message: e.toString());
+    }
+  }
+
+  /// -- Google SignIn Authentication --
+  Future<void> googleSignIn() async {
+    try {
+      //Start Loading
+      FullScreenLoader.openLoadingDialog('Entrando...', TImages.docerAnimation);
+
+      //Check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      //Google Authentication
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+
+      //save user recort
+      await userController.saveUserRecord(userCredentials);
 
       FullScreenLoader.stopLoading();
 

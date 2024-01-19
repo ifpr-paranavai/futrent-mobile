@@ -51,6 +51,8 @@ dependencies:
   intl: ^0.17.0
   mask_text_input_formatter: ^2.7.0
   csc_picker: ^0.2.7
+  google_sign_in: ^6.1.6
+  
 
 
 

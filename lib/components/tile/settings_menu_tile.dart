@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/styles/colors.dart';
 
 class SettingsMenuTile extends StatelessWidget {
-  const SettingsMenuTile(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.subtitle,
-      this.trailing,
-      this.onTap});
+  const SettingsMenuTile({super.key, required this.icon, required this.title, required this.subtitle, this.trailing, this.onTap});
 
   final IconData icon;
   final String title, subtitle;
@@ -18,7 +12,7 @@ class SettingsMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: 28, color: orange),
+      leading: Icon(icon, size: 28, color: babyBlue),
       title: Text(
         title,
         style: Theme.of(context).textTheme.titleMedium,
