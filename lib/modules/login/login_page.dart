@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futrent_mobile/components/common/divider_social_media.dart';
 import 'package:futrent_mobile/components/icons/social_media_icons.dart';
 import 'package:futrent_mobile/modules/login/controller/login_controller.dart';
-import 'package:futrent_mobile/pages/forgot_password.dart';
+import 'package:futrent_mobile/pages/forget%20password/forgot_password.dart';
 import 'package:futrent_mobile/pages/register_page.dart';
 import 'package:futrent_mobile/utils/validator.dart';
 import 'package:get/get.dart';

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:futrent_mobile/pages/forget%20password/forget_password_controller.dart';
+import 'package:futrent_mobile/utils/validator.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -9,7 +12,7 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  // final TextEditingController _controller = TextEditingController();
+  final controller = Get.put(ForgetPasswordController());
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +43,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Esqueceu sua senha?',
-                        style: Theme.of(context).textTheme.headlineMedium),
+                    Text('Esqueceu sua senha?', style: Theme.of(context).textTheme.headlineMedium),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -52,11 +54,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(15, 50, 15, 40),
-                      child: TextFormField(
-                        expands: false,
-                        decoration: const InputDecoration(
-                            labelText: 'Insira seu email',
-                            prefixIcon: Icon(Iconsax.direct)),
+                      child: Form(
+                        key: controller.forgetPasswordFormKey,
+                        child: TextFormField(
+                          controller: controller.email,
+                          validator: Validator.validateEmail,
+                          expands: false,
+                          decoration: const InputDecoration(labelText: 'Insira seu email', prefixIcon: Icon(Iconsax.direct)),
+                        ),
                       ),
                     ),
                     Padding(
@@ -64,7 +69,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       child: SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => controller.sendPasswordResetEmail(),
                           child: const Text('Enviar email'),
                         ),
                       ),
