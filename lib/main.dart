@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:futrent_mobile/base/app.dart';
-import 'package:futrent_mobile/base/firebase_options.dart';
+import 'package:futrent_mobile/app.dart';
+import 'package:futrent_mobile/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:futrent_mobile/packages/authentication/data/authentication_remote_datasource.dart';
+import 'package:futrent_mobile/modules/login/service/authentication_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -20,7 +20,7 @@ Future<void> main() async {
   /// -- Initialize Firebase & Authentication Repository--
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then(
-    (FirebaseApp value) => Get.put(AuthenticationRemoteDataSource()),
+    (FirebaseApp value) => Get.put(AuthenticationService()),
   );
 
   runApp(const App());
