@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:futrent_mobile/shared/components/icons/icons_horizontal.dart';
+import 'package:futrent_mobile/shared/styles/colors.dart';
+import 'package:futrent_mobile/shared/view/sub%20category/subcategory_page.dart';
+import 'package:get/get.dart';
+
+class HomeCategories extends StatelessWidget {
+  const HomeCategories({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 80,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: 6,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (_, index) {
+          return IconesDestaquesHorizontais(
+            image: 'assets/images/fut7.png',
+            title: 'Futebol',
+            onTap: () => Get.to(() => const SubCategoriesPage()),
+            textColor: white,
+            backgroundColor: white,
+          );
+        },
+      ),
+    );
+  }
+}
