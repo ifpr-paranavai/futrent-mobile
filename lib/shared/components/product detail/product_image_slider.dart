@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'package:futrent_mobile/shared/components/app%20bar/primary_app_bar.dart';
+import 'package:futrent_mobile/shared/components/common/curved_edges_widget.dart';
+import 'package:futrent_mobile/shared/components/images/rounded_image.dart';
+import 'package:futrent_mobile/shared/styles/colors.dart';
+import 'package:futrent_mobile/shared/utils/sizes.dart';
+
+class ProductImageSlider extends StatelessWidget {
+  const ProductImageSlider({
+    super.key,
+    required this.dark,
+  });
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return CurvedEdgesWidget(
+      child: Container(
+        color: dark ? darkGrey : white,
+        child: Stack(
+          children: [
+            /// -- MAIN LARGE IMAGE
+            const Image(
+                image:
+                    AssetImage('assets/images/estabelecimentos/ALAMBRADO.jpg')),
+
+            Positioned(
+              right: 0,
+              bottom: 30,
+              left: Sizes.defaultSpace,
+              child: SizedBox(
+                height: 80,
+                child: ListView.separated(
+                  itemCount: 6,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  separatorBuilder: (_, __) =>
+                      const SizedBox(width: Sizes.spaceBtwItems),
+                  itemBuilder: (_, index) => RoundedImage(
+                      width: 80,
+                      backgroundColor: dark ? black : white,
+                      border: Border.all(color: lightGreen, width: 2.0),
+                      imageUrl: 'assets/images/estabelecimentos/ALAMBRADO.jpg'),
+                ),
+              ),
+            ),
+
+            const AppBarPrimary(
+              showBackArrow: true,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
